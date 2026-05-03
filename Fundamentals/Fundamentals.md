@@ -28,5 +28,4 @@ Every device on a network is assigned an IP address, for example 142.250.190.78 
 
   <img width="657" height="223" alt="IP Address" src="https://github.com/user-attachments/assets/a004ed13-68c3-4783-a60e-8a230cb161ef" />
 
-
 In order to obtain the IP address from the domain name, a core concept is used — which is known as,
