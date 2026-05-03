@@ -29,3 +29,24 @@ Every device on a network is assigned an IP address, for example 142.250.190.78 
   <img width="657" height="223" alt="IP Address" src="https://github.com/user-attachments/assets/a004ed13-68c3-4783-a60e-8a230cb161ef" />
 
 In order to obtain the IP address from the domain name, a core concept is used — which is known as,
+
+## 3. DOMAIN NAME SYSTEM (DNS)
+
+How does the internet actually convert a domain name into an IP address? That is exactly what DNS, the Domain Name System does. 
+DNS is essentially the phone book of the internet. It is a system that maintains a massive directory of domain names and their corresponding IP addresses. Whenever you type a domain name, DNS works silently in the background to look it up, find the matching IP address, and hand it back to your browser so the request can reach the right server.
+
+Real World Scenario:-
+
+Think of it like a restaurant directory service. You call up the directory and say, "I want to visit The Grand Kitchen, what is their address?" The directory looks it up and tells you, "That's at 14B, 3rd Cross, 5th Block." Now you have the address and you can head there.
+
+Technical Example:-
+
+When you type google.com in your browser, the following steps happen in milliseconds:
+1) Your browser asks the DNS Resolver (usually provided by your internet provider) — "What is the IP for google.com?"
+2) The DNS Resolver checks its cache. If it has seen this before, it returns the answer immediately.
+3) If not, it contacts the Root DNS Server, which points it toward the right direction.
+4) The resolver then queries the Authoritative DNS Server for google.com, which holds the definitive record.
+5) The IP address 142.250.190.78 is returned to your browser.
+6) Your browser now sends the HTTP request directly to that IP address.
+This entire lookup chain is called a DNS Resolution. It happens every time you visit a new website, and the result is cached temporarily so the full lookup does not have to repeat every single time.
+
