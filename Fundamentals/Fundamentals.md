@@ -1,4 +1,4 @@
-CLIENT - SERVER ARCHITECTURE
+## CLIENT - SERVER ARCHITECTURE
 
 Client-Server Architecture is a model where two parties communicate over a network — the client sends a request and the server sends back a response. The client is the one asking, and the server is the one answering.
 
