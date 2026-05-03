@@ -51,3 +51,4 @@ When you type google.com in your browser, the following steps happen in millisec
 This entire lookup chain is called a DNS Resolution. It happens every time you visit a new website, and the result is cached temporarily so the full lookup does not have to repeat every single time.
 
      <img width="463" height="266" alt="03_Domain Name System" src="https://github.com/user-attachments/assets/81c48ec2-5af4-4e52-83f5-5373dbaf97a4" />
+
