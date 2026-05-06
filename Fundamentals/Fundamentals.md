@@ -84,3 +84,5 @@ Technical Example:-
 Reverse Proxy — When millions of users type www.netflix.com in their browser, they are not hitting a single Netflix server. Their request hits a reverse proxy first — in Netflix's case, this is managed through tools like NGINX or AWS CloudFront. The reverse proxy then routes each request to the appropriate backend service — one service for login, another for video streaming, another for recommendations — based on rules. The user never knows any of this is happening. To them, it is just Netflix.
 
 This is why reverse proxies plays a major role in modern system design. They enable load distribution, SSL termination, caching, security filtering, and centralized routing all without the client to be know anything about the backend infrastructure.
+
+<img width="495" height="222" alt="04_Reverse Proxy" src="https://github.com/user-attachments/assets/31f84280-cbbb-4661-acbf-4a22cca838ca" />
