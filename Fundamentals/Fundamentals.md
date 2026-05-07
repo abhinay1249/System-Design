@@ -86,3 +86,24 @@ Reverse Proxy — When millions of users type www.netflix.com in their browser, 
 This is why reverse proxies plays a major role in modern system design. They enable load distribution, SSL termination, caching, security filtering, and centralized routing all without the client to be know anything about the backend infrastructure.
 
 <img width="495" height="222" alt="04_Reverse Proxy" src="https://github.com/user-attachments/assets/31f84280-cbbb-4661-acbf-4a22cca838ca" />
+
+
+## 5. LATENCY
+
+When a client sends a request to a server, the response doesn't happen instantly. The time it takes for a data packet to travel from its source to its destination is called Latency.
+
+Simply put, latency is a measure of delay. It's the waiting period between taking an action (making a request) and seeing the result(receving as response). It is typically measured in milliseconds (ms). A system with low latency feels fast and responsive, while a system with high latency feels sluggish and slow. In system design, minimizing latency is one of the most important goals for delivering a good user experience.
+
+Real World Scenario:-
+
+Back in our restaurant, you've just placed your order with the waiter. The time it takes for the waiter to physically walk from your table to the kitchen to hand in the order ticket is your latency. If your table is right next to the kitchen, the waiter takes two steps, and the delay is minimal (low latency). But if you are seated in the outdoor and the kitchen is all the way in the back of the building, the waiter has to walk much further, taking much longer to deliver the ticket (high latency).
+
+Notice that the food takes the exact same amount of time to cook in both cases. The delay isn't in the preparation (processing) — the delay is purely in the travel time.
+
+Technical Example:-
+
+Imagine a user in Mumbai, India, trying to access a website hosted on a server in New York, USA. When they click a button, their HTTP request has to physically travel through thousands of miles of fiber-optic cables across oceans to reach New York, and the response has to travel all the way back. Even near the speed of light, this immense distance causes a noticeable delay — perhaps around 250 milliseconds. This is high latency.
+
+If the company instead moves their server (or a copy of their data) to Mumbai, the data only has to travel a few miles. The response time drops to 20 milliseconds. This is low latency.
+
+Physical distance is a primary cause of network latency, which is why global systems use strategies like placing servers geographically closer to their users to reduce the delay.
