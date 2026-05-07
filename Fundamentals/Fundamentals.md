@@ -107,3 +107,28 @@ Imagine a user in Mumbai, India, trying to access a website hosted on a server i
 If the company instead moves their server (or a copy of their data) to Mumbai, the data only has to travel a few miles. The response time drops to 20 milliseconds. This is low latency.
 
 Physical distance is a primary cause of network latency, which is why global systems use strategies like placing servers geographically closer to their users to reduce the delay.
+
+
+## 6. HTTP/HTTPS
+
+When a client and server talk to each other over a network, they need a shared language — a set of rules so they can understand each other. This is called a protocol. HTTP (Hypertext Transfer Protocol) is the universal language of the web. It defines how requests and responses are formatted and transmitted.
+
+HTTP : It transmits data in plain text. Anyone intercepting the network traffic can easily read it.
+
+
+HTTPS: HTTPS is simply HTTP with a secure, encrypted wrapper around it. It encrypts the data before it leaves the client, and only the intended server can decrypt it, ensuring that sensitive information like passwords and credit card numbers remain safe from eavesdroppers.
+
+Real World Scenario:-
+
+In our restaurant, imagine you want to order a secret menu item, but you don't want anyone else at nearby tables to hear what you are ordering. [Sounds Funny Right]
+
+If you use HTTP, you just tell your order across the room to the waiter. Everyone sitting around you can hear exactly what you said.
+
+If you use HTTPS, you write your secret order on a piece of paper, lock it inside a small box, and hand the locked box to the waiter. Even if someone intercepts the waiter on the way to the kitchen, they cannot open the box. Only the kitchen staff has the key to unlock it, read your order, and prepare your food.
+
+
+Technical Example:- 
+
+When you visit a banking website and log in, your browser (client) sends your username and password to the bank's server.
+
+If the site used HTTP, your password would be sent over the internet as plain text. A hacker sitting on the same public Wi-Fi network could easily intercept the traffic and read your password. Because the bank uses HTTPS (indicated by the lock icon and https:// in the URL), your browser encrypts the password into an unreadable string before sending it. Even if the hacker intercepts the network packet, all they see is scrambled data. The data remains encrypted during transit and is only decrypted once it safely reaches the bank's server, which holds the private key required to unlock it.
