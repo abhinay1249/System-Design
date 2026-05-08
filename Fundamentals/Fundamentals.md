@@ -126,7 +126,6 @@ If you use HTTP, you just tell your order across the room to the waiter. Everyon
 
 If you use HTTPS, you write your secret order on a piece of paper, lock it inside a small box, and hand the locked box to the waiter. Even if someone intercepts the waiter on the way to the kitchen, they cannot open the box. Only the kitchen staff has the key to unlock it, read your order, and prepare your food.
 
-
 Technical Example:- 
 
 When you visit a banking website and log in, your browser (client) sends your username and password to the bank's server.
@@ -134,5 +133,21 @@ When you visit a banking website and log in, your browser (client) sends your us
 If the site used HTTP, your password would be sent over the internet as plain text. A hacker sitting on the same public Wi-Fi network could easily intercept the traffic and read your password. Because the bank uses HTTPS (indicated by the lock icon and https:// in the URL), your browser encrypts the password into an unreadable string before sending it. 
 
 Even if the hacker intercepts the network packet, all they see is encrypted data. The data remains encrypted during transit and is only decrypted once it safely reaches the bank's server, which holds the private key required to unlock it.
+
+
+## 7. API
+
+In our digital world, different software applications need a way to communicate and share data with each other. This is exactly what an API (Application Programming Interface) does. It is a set of defined rules that allows one piece of software to talk to another.
+Instead of building complex features from scratch, developers use APIs to plug into existing services like checking the weather, processing a payment, or displaying a map. The API acts as a messenger: it takes your request, tells the other system what you want, and returns the response back to you. You don't need to know how the other system is built or how its code works internally; you just need to know the correct way to ask it for what you want
+
+Real World Scenario:-
+
+In our restaurant, you (the customer) want food from the kitchen, but you are not allowed to walk into the kitchen, open the fridge, and start cooking yourself. The kitchen has its own complex internal operations that you don't need to understand. Instead, you interact with the menu. The menu provides a list of specific dishes you are allowed to order. The waiter takes your order from the menu, delivers it to the kitchen, and brings the cooked food back to your table.
+
+In this scenario, the menu is the API documentation (the rules defining what you can ask for), and the waiter is the API itself,the messenger that securely transports your request to the kitchen and brings the response back, without you ever having to step foot inside the kitchen.
+
+Technical Example:- 
+
+Imagine you are using a ride-sharing app like Uber. Uber needs to show you a map of where your driver is, but Uber did not build their own global mapping system from scratch. Instead Uber uses the Google Maps API. When you open the Uber app, the app sends an HTTP request to the Google Maps API saying, "Can I get the map data for this specific location?" The Google Maps API receives the request, pulls the map data from Google's massive internal servers, and sends it back to the Uber app to display on your screen. Uber gets to display world-class maps without ever having direct access to Google's backend code or private databases.
 
 
