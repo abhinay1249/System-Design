@@ -223,3 +223,10 @@ With GraphQL, you make a single request to one endpoint and specify exactly just
 
 <img width="230" height="292" alt="image" src="https://github.com/user-attachments/assets/2dad577a-a709-41ca-92a4-70899d72e359" />
 
+The server responds with exactly the name, the profile picture and the last 5 posts with only their title and image. 
+One request. No wasted data. No extra round trips.
+
+This is why companies like Facebook, GitHub, Shopify, etc adopted GraphQL. It gives the client precise control over the data it receives by reducing bandwidth and improving performance.
+
+
+
