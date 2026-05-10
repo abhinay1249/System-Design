@@ -201,3 +201,11 @@ REST APIs work well, but they come with a limitation. They return fixed data str
 
 --> REST, the server is in control of the response.
 --> GraphQL, the client is in control.
+
+### Real World Scenario:-
+
+Back in our restaurant, with the REST approach. You order a "Burger Combo Meal" and the kitchen sends you a burger, fries, a drink, a salad, and a dessert. But you only wanted the burger, fries and the drink. You got a lot more than you asked for (over-fetching). Or maybe you ordered the burger but it didn't come with potato chips, so you have to place a second order just for potatochips (under-fetching).
+
+With GraphQL approach, You are handed a blank order slip and you write down exactly what you want, "I want a burger and drink itself". The kitchen reads your custom slip and sends you precisely a burger and drink. No extra salad you didn't ask for. No second trip to the waiter. You got exactly what you requested in a single order.
+
+
