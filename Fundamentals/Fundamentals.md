@@ -151,3 +151,44 @@ Technical Example:-
 Imagine you are using a ride-sharing app like Uber. Uber needs to show you a map of where your driver is, but Uber did not build their own global mapping system from scratch. Instead Uber uses the Google Maps API. When you open the Uber app, the app sends an HTTP request to the Google Maps API saying, "Can I get the map data for this specific location?". The Google Maps API receives the request, pulls the map data from Google's massive internal servers and sends it back to the Uber app to display on your screen. Uber gets to display world-class maps without ever having direct access to Google's backend code or private databases.
 
 
+## 8. REST API
+
+We now know what an API is? A set of rules that allows one piece of software to talk to another. But how should that API be designed? What structure should it follow? Here comes REST API in place.
+
+REST API defines how client and servers communicate over HTTP in a structured way. The core idea behind REST is simple: every piece of data on the server (a user, a product, an order) is treated as a resource, and each resource is accessed using a unique URL. The client interacts with these resources using standard HTTP methods:- 
+  
+  --> GET to read 
+  --> POST to create 
+  --> PUT to update 
+  --> DELETE to remove 
+
+The server responds with the data in a lightweight format, typically JSON. Each request is independent, the server does not remember anything about the previous request. This is called being "stateless".
+
+Real World Scenario:-
+
+Let us go back to our restaurant. Imagine the restaurant introduces a standardized ordering system that every waiter should follow, a fixed set of actions and a clear way to use them.
+
+--> If you want to see the menu, you say: Show me the menu. 
+  → That is a GET request.
+--> If you want to place a new order, you say: I'd like to order the pasta. 
+  → That is a POST request.
+--> If you want to change your order, you say: Actually, make that a pizza instead." 
+  → That is a PUT request.
+--> If you want to cancel your order, you say: Please cancel my order. 
+  → That is a DELETE request.
+
+Every customer follows the same four actions. Every waiter understands them. There is no confusion, no ambiguity. That standardized system is what REST brings to the world of APIs.
+
+Technical Example:- 
+
+Consider X. When you interact with tweets, behind the scenes, your app is calling Twitter's REST API:
+
+--> GET    -  /api/tweets/12345     → Fetches the tweet with ID 12345.
+--> POST   -  /api/tweets           → Creates a new tweet (with the tweet content sent in the request body as JSON).
+--> PUT    -  /api/tweets/12345     → Updates the tweet with ID 12345.
+--> DELETE -  /api/tweets/12345     → Deletes the tweet with ID 12345.
+
+Each URL represents a specific resource (tweet), each HTTP method represents a specific action, and each request is completely independent, the server does not need to remember what you did before. The response comes back in JSON format, containing the data your app needs to present on the screen.
+
+
+
