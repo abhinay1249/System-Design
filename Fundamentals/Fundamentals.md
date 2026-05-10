@@ -57,7 +57,7 @@ This entire lookup chain is called a DNS Resolution. It happens every time you v
 
 A proxy is an intermediary, a middleman that stands between the client and the server. Depending on which side it stands on, it takes one of two forms.
 
-Forward Proxy
+# Forward Proxy
 
 A Forward Proxy sits on the client's side. The client sends its request to the proxy, and the proxy forwards it to the server on the client's behalf. The server never directly sees who the original client is — it only sees the proxy. This is commonly used to hide the client's identity, bypass restrictions, or filter outgoing traffic.
 
@@ -71,7 +71,7 @@ Forward Proxy - When an employee inside a corporate network tries to visit a web
 
 <img width="619" height="250" alt="04_Forward Proxy" src="https://github.com/user-attachments/assets/12cc727e-be13-4983-8c56-f82576bd1862" />
 
-Reverse Proxy
+# Reverse Proxy
 
 A Reverse Proxy sits on the server's side. The client sends its request thinking it is reaching the server directly, but it is actually hitting the reverse proxy first. The reverse proxy then decides which backend server to forward the request to. The client never directly sees the actual server, it only sees the proxy. This is widely used in production systems for security, performance, and traffic management.
 
