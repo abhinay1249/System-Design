@@ -228,5 +228,7 @@ One request. No wasted data. No extra round trips.
 
 This is why companies like Facebook, GitHub, Shopify, etc adopted GraphQL. It gives the client precise control over the data it receives by reducing bandwidth and improving performance.
 
+# 10. DATABASES
+
 
 
