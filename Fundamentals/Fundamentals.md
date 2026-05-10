@@ -208,5 +208,16 @@ Back in our restaurant, with the REST approach. You order a "Burger Combo Meal" 
 
 With GraphQL approach, You are handed a blank order slip and you write down exactly what you want, "I want a burger and drink itself". The kitchen reads your custom slip and sends you precisely a burger and drink. No extra salad you didn't ask for. No second trip to the waiter. You got exactly what you requested in a single order.
 
+### Technical Example:- 
+
+Imagine you are building the profile page for a social media app like Instagram. You need the user's name, their profile picture, and their last 5 posts.
+
+With a REST API, you might have to make three separate requests:
+
+GET /api/users/42 → Returns the user's name, email, date of birth, bio, and 20 other fields you don't need.
+GET /api/users/42/profile-picture → Returns the profile picture.
+GET /api/users/42/posts?limit=5 → Returns the last 5 posts.
+That is three network round trips and a lot of unnecessary data.
+
 <img width="230" height="292" alt="image" src="https://github.com/user-attachments/assets/2dad577a-a709-41ca-92a4-70899d72e359" />
 
