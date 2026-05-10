@@ -2,11 +2,11 @@
 
 Client-Server Architecture is a model where two parties communicate over a network — the client sends a request and the server sends back a response. The client is the one asking, and the server is the one answering.
 
-## Real World Scenario:- 
+### Real World Scenario:- 
 
 Think of a restaurant. You are a customer (client). You call the waiter, place your order, and wait. The kitchen (server) receives that order, prepares the food, and sends it back to you through the waiter. You don't know how the kitchen works — you just asked, and you received.
 
-## Technical Example:-
+### Technical Example:-
 
 When you type https://www.google.com in your browser, your browser (client) sends an HTTP GET request to Google's server. The server receives that request, processes it, and sends back an HTTP response containing the HTML of the Google homepage. Your browser then renders it on your screen. The client and server are separate — they only interact through requests and responses over HTTP.
 
@@ -18,11 +18,11 @@ An IP (Internet Protocol) Address is a unique numerical label assigned to every 
 
 For a client to communicate with a server, it needs the server's IP address to locate and send a request to it. However, since IP addresses are just strings of numbers and difficult to remember, domain names are used instead, they are simple English words that are easy to recall and map directly to the underlying IP address.
 
-## Real World Scenario:- 
+### Real World Scenario:- 
 
 Going back to our restaurant — before you can visit it, you need its address. Without the address, you wouldn't know where to go. Every restaurant has a unique address that sets it apart from every other place in the city. In the same way, every server on the internet has an IP address — a unique location that tells your request exactly where to be delivered.
 
-## Technical Example:-
+### Technical Example:-
 
 Every device on a network is assigned an IP address, for example 142.250.190.78 (one of Google's IPs). When your browser wants to reach Google, it first needs to find this address. Once it has the IP, it sends the HTTP request directly to that address over the network.
 
@@ -35,11 +35,11 @@ In order to obtain the IP address from the domain name, a core concept is used �
 How does the internet actually convert a domain name into an IP address? That is exactly what DNS, the Domain Name System does. 
 DNS is essentially the phone book of the internet. It is a system that maintains a massive directory of domain names and their corresponding IP addresses. Whenever you type a domain name, DNS works silently in the background to look it up, find the matching IP address, and hand it back to your browser so the request can reach the right server.
 
-## Real World Scenario:-
+### Real World Scenario:-
 
 Think of it like a restaurant directory service. You call up the directory and say, "I want to visit The Grand Kitchen, what is their address?" The directory looks it up and tells you, "That's at 14B, 3rd Cross, 5th Block." Now you have the address and you can head there.
 
-## Technical Example:-
+### Technical Example:-
 
 When you type google.com in your browser, the following steps happen in milliseconds:
 
@@ -58,15 +58,15 @@ This entire lookup chain is called a DNS Resolution. It happens every time you v
 
 A proxy is an intermediary, a middleman that stands between the client and the server. Depending on which side it stands on, it takes one of two forms.
 
-## Forward Proxy
+### Forward Proxy
 
 A Forward Proxy sits on the client's side. The client sends its request to the proxy, and the proxy forwards it to the server on the client's behalf. The server never directly sees who the original client is — it only sees the proxy. This is commonly used to hide the client's identity, bypass restrictions, or filter outgoing traffic.
 
-## Real World Scenario:-
+### Real World Scenario:-
 
 Think of a Forward Proxy like a personal assistant. You don't want to call the restaurant directly — so you ask your assistant to call on your behalf. The restaurant speaks to your assistant, not to you. You stay hidden behind that assistant. That assistant is the forward proxy.
 
-## Technical Example:-
+### Technical Example:-
 
 Forward Proxy - When an employee inside a corporate network tries to visit a website, the request first goes to the company's forward proxy server. The proxy checks if the website is allowed, then forwards the request on the employee's behalf. The website only sees the proxy's IP address, not the employee's. This is how VPNs and corporate firewalls work.
 
@@ -76,11 +76,11 @@ Forward Proxy - When an employee inside a corporate network tries to visit a web
 
 A Reverse Proxy sits on the server's side. The client sends its request thinking it is reaching the server directly, but it is actually hitting the reverse proxy first. The reverse proxy then decides which backend server to forward the request to. The client never directly sees the actual server, it only sees the proxy. This is widely used in production systems for security, performance, and traffic management.
 
-## Real World Scenario:-
+### Real World Scenario:-
 
 Think of a Reverse Proxy like the front desk or reception of a large hotel restaurant. You walk up to the front desk and place your request. The front desk doesn't cook the food — it figures out which kitchen section (the starters section, the main course section, the desserts section) should handle your order, routes it there, and brings the response back to you. You never interacted with any specific kitchen directly. That front desk is the reverse proxy.
 
-## Technical Example:-
+### Technical Example:-
 
 Reverse Proxy — When millions of users type www.netflix.com in their browser, they are not hitting a single Netflix server. Their request hits a reverse proxy first — in Netflix's case, this is managed through tools like NGINX or AWS CloudFront. The reverse proxy then routes each request to the appropriate backend service — one service for login, another for video streaming, another for recommendations — based on rules. The user never knows any of this is happening. To them, it is just Netflix.
 
@@ -95,13 +95,13 @@ When a client sends a request to a server, the response doesn't happen instantly
 
 Simply put, latency is a measure of delay. It's the waiting period between taking an action (making a request) and seeing the result(receving as response). It is typically measured in milliseconds (ms). A system with low latency feels fast and responsive, while a system with high latency feels sluggish and slow. In system design, minimizing latency is one of the most important goals for delivering a good user experience.
 
-## Real World Scenario:-
+### Real World Scenario:-
 
 Back in our restaurant, you've just placed your order with the waiter. The time it takes for the waiter to physically walk from your table to the kitchen to hand in the order ticket is your latency. If your table is right next to the kitchen, the waiter takes two steps, and the delay is minimal (low latency). But if you are seated in the outdoor and the kitchen is all the way in the back of the building, the waiter has to walk much further, taking much longer to deliver the ticket (high latency).
 
 Notice that the food takes the exact same amount of time to cook in both cases. The delay isn't in the preparation (processing) — the delay is purely in the travel time.
 
-## Technical Example:-
+### Technical Example:-
 
 Imagine a user in Mumbai, India, trying to access a website hosted on a server in New York, USA. When they click a button, their HTTP request has to physically travel through thousands of miles of fiber-optic cables across oceans to reach New York, and the response has to travel all the way back. Even near the speed of light, this immense distance causes a noticeable delay — perhaps around 250 milliseconds. This is high latency.
 
@@ -119,7 +119,7 @@ HTTP : It transmits data in plain text. Anyone intercepting the network traffic 
 
 HTTPS: HTTPS is simply HTTP with a secure, encrypted wrapper around it. It encrypts the data before it leaves the client, and only the intended server can decrypt it, ensuring that sensitive information like passwords and credit card numbers remain safe from eavesdroppers.
 
-## Real World Scenario:-
+### Real World Scenario:-
 
 In our restaurant, imagine you want to order a secret menu item, but you don't want anyone else at nearby tables to hear what you are ordering. [Sounds Funny Right]
 
@@ -127,7 +127,7 @@ If you use HTTP, you just tell your order across the room to the waiter. Everyon
 
 If you use HTTPS, you write your secret order on a piece of paper, lock it inside a small box, and hand the locked box to the waiter. Even if someone intercepts the waiter on the way to the kitchen, they cannot open the box. Only the kitchen staff has the key to unlock it, read your order, and prepare your food.
 
-## Technical Example:- 
+### Technical Example:- 
 
 When you visit a banking website and log in, your browser (client) sends your username and password to the bank's server.
 
@@ -141,13 +141,13 @@ Even if the hacker intercepts the network packet, all they see is encrypted data
 In our digital world, different software applications need a way to communicate and share data with each other. This is exactly what an API (Application Programming Interface) does. It is a set of defined rules that allows one piece of software to talk to another.
 Instead of building complex features from scratch, developers use APIs to plug into existing services like checking the weather, processing a payment, or displaying a map. The API acts as a messenger: it takes your request, tells the other system what you want, and returns the response back to you. You don't need to know how the other system is built or how its code works internally; you just need to know the correct way to ask it for what you want. The api can be fetched in different types such as in json and xml format.
 
-## Real World Scenario:-
+### Real World Scenario:-
 
 In our restaurant, you (the customer) want food from the kitchen, but you are not allowed to walk into the kitchen, open the fridge, and start cooking yourself. The kitchen has its own complex internal operations that you don't need to understand. Instead, you interact with the menu. The menu provides a list of specific dishes you are allowed to order. The waiter takes your order from the menu, delivers it to the kitchen, and brings the cooked food back to your table.
 
 In this scenario, the menu is the API documentation (the rules defining what you can ask for), and the waiter is the API itself,the messenger that securely transports your request to the kitchen and brings the response back, without you ever having to step foot inside the kitchen.
 
-## Technical Example:- 
+### Technical Example:- 
 
 Imagine you are using a ride-sharing app like Uber. Uber needs to show you a map of where your driver is, but Uber did not build their own global mapping system from scratch. Instead Uber uses the Google Maps API. When you open the Uber app, the app sends an HTTP request to the Google Maps API saying, "Can I get the map data for this specific location?". The Google Maps API receives the request, pulls the map data from Google's massive internal servers and sends it back to the Uber app to display on your screen. Uber gets to display world-class maps without ever having direct access to Google's backend code or private databases.
 
@@ -165,7 +165,7 @@ REST API defines how client and servers communicate over HTTP in a structured wa
 
 The server responds with the data in a lightweight format, typically JSON. Each request is independent, the server does not remember anything about the previous request. This is called being "stateless".
 
-## Real World Scenario:-
+### Real World Scenario:-
 
 Let us go back to our restaurant. Imagine the restaurant introduces a standardized ordering system that every waiter should follow, a fixed set of actions and a clear way to use them.
 
@@ -180,7 +180,7 @@ Let us go back to our restaurant. Imagine the restaurant introduces a standardiz
 
 Every customer follows the same four actions. Every waiter understands them. There is no confusion, no ambiguity. That standardized system is what REST brings to the world of APIs.
 
-## Technical Example:- 
+### Technical Example:- 
 
 Consider X. When you interact with tweets, behind the scenes, your app is calling Twitter's REST API:
 
