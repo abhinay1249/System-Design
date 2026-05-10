@@ -246,3 +246,8 @@ In our restaurant, the kitchen needs to remember things such as what dishes are 
 
 The database is the restaurant's record system, A register where every order, every reservation and every inventory count is stored so it can be looked up at any time.
 
+### Technical Example
+
+When you create an account on Amazon, your name, email, password and address are sent to Amazon's server. The server doesn't just hold that data in temporary memory it writes it into a database. The next time you log in, the server queries the database, finds your record, verifies your password and loads your profile. When you place an order, a new entry is written to the database. When you check your order history, the server reads from the database and sends it back to your browser.
+
+Every action you take such as signing up, logging in, ordering, reviewing is a read or write operation against the database. 
