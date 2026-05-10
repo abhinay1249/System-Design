@@ -230,5 +230,11 @@ This is why companies like Facebook, GitHub, Shopify, etc adopted GraphQL. It gi
 
 # 10. DATABASES
 
+Every application needs a place to store, organize and retrieve data. When a user signs up, places an order, or posts a comment that data has to be present permanent so it can be accessed later. That place is a Database.
+
+A database is like a storage system that the server uses to save information and pull it back whenever needed. Without a database, every piece of data would be lost the moment the server restarts. It is what makes applications remember your login credentials, your order history, your messages. 
+
+In system design, the database is one of the most critical components because almost every operation such as reading, writing, updating, deleting happens on it.
+
 
 
