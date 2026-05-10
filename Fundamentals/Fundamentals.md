@@ -12,6 +12,7 @@ When you type https://www.google.com in your browser, your browser (client) send
 
   <img width="478" height="236" alt="Client-Server Architecture" src="https://github.com/user-attachments/assets/a9513b5a-7804-4dda-9d34-fe576c13d07f" />
 
+
 # 2. I.P ADDRESS
 
 An IP (Internet Protocol) Address is a unique numerical label assigned to every device connected to a network. It acts as the identity and location of a device, so that data knows exactly where to go and where to come back from.
@@ -29,6 +30,7 @@ Every device on a network is assigned an IP address, for example 142.250.190.78 
   <img width="657" height="223" alt="IP Address" src="https://github.com/user-attachments/assets/a004ed13-68c3-4783-a60e-8a230cb161ef" />
 
 In order to obtain the IP address from the domain name, a core concept is used — which is known as,
+
 
 # 3. DOMAIN NAME SYSTEM (DNS)
 
@@ -191,6 +193,7 @@ Consider X. When you interact with tweets, behind the scenes, your app is callin
 
 Each URL represents a specific resource (tweet), each HTTP method represents a specific action and each request is completely independent, the server does not need to remember what you did before. The response comes back in JSON format, containing the data your app needs to present on the screen.
 
+
 # 9. GRAPHQL
 
 GraphQL was created by Meta[FaceBook] in 2012 to solve exactly the drawback of REST.
@@ -228,6 +231,7 @@ One request. No wasted data. No extra round trips.
 
 This is why companies like Facebook, GitHub, Shopify, etc adopted GraphQL. It gives the client precise control over the data it receives by reducing bandwidth and improving performance.
 
+
 # 10. DATABASES
 
 Every application needs a place to store, organize and retrieve data. When a user signs up, places an order, or posts a comment that data has to be present permanent so it can be accessed later. That place is a Database.
@@ -236,5 +240,9 @@ A database is like a storage system that the server uses to save information and
 
 In system design, the database is one of the most critical components because almost every operation such as reading, writing, updating, deleting happens on it.
 
+### Real World Scenario:-
 
+In our restaurant, the kitchen needs to remember things such as what dishes are available, what ingredients are in stock, which tables have placed orders and what each customer ordered. If the kitchen had no record of any of this and relied purely on memory then things would fall apart very quickly. Orders would be forgotten, ingredients would run out without warning and returning customers would have to explain their preferences every single time.
+
+The database is the restaurant's record system, A register where every order, every reservation and every inventory count is stored so it can be looked up at any time.
 
