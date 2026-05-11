@@ -371,6 +371,8 @@ When you visit www.amazon.com, your request does not go directly to a single ser
 
 Common load balancers used in production include NGINX, HAProxy and cloud-managed solutions like AWS Elastic Load Balancer (ELB).
 
+<img width="621" height="317" alt="image" src="https://github.com/user-attachments/assets/fcd9f453-952b-4186-89d5-0cf6262369b4" />
+
 
 Until, here the fundamental concepts till the servers is presented. Hope this would be useful and helpful for the basic understanding of how the backend systems runs which is completely unknown for the user on the frontend screen. Let us move ahead and deep dive into the core part of the databases section in Part - 2. Stay Tuned.
 
