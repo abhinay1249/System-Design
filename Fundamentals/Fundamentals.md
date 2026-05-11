@@ -329,6 +329,8 @@ With horizontal scaling, we now have multiple servers handling incoming traffic.
 
 A Load Balancer is the component that is answer to the above question. It sits in front of all the servers and distributes incoming requests evenly across them, making sure no single server is overloaded while others are underutilized. If one server goes down, the load balancer detects it and stops sending traffic to it and routing requests to the remaining healthy servers instead.
 
+Load Balancer does route this traffic to multiple servers by using few algorithms such as Round Robin, I.P Hashing, Least Connections etc.. 
+
 ### Real World Scenario:-
 
 Our restaurant now has multiple order counters to handle the rush. But if there is no one managing the crowd then all customers might line up at the first counter while the other counters remain empty. To fix this the restaurant places a floor manager at the entrance. The floor manager looks at all the counters then sees which one has the shortest queue and directs each incoming customer to the least busy counter. This results every counter stays evenly loaded and customers get served faster. The floor manager is the load balancer.
@@ -338,4 +340,6 @@ Our restaurant now has multiple order counters to handle the rush. But if there 
 When you visit www.amazon.com, your request does not go directly to a single server. It first hits Amazon's load balancer. The load balancer checks which of the hundreds of backend servers is least busy at that moment and forwards your request over there. The next user's request might go to a completely different server. If one server crashes, the load balancer automatically removes it from the pool and redirects traffic to the others this cannot be noticed by the user.
 
 Common load balancers used in production include NGINX, HAProxy and cloud-managed solutions like AWS Elastic Load Balancer (ELB).
+
+
 
