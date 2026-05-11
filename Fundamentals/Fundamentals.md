@@ -259,6 +259,8 @@ We know what a database is, the next question is how is the data actually organi
 → SQL
 → NOSQL
 
+SQL
+
 A SQL Database (Relational Database) stores data in tables in the form of rows and columns like a spreadsheet. Every row follows the same fixed structure and tables can be linked to each other through relationships. You interact with the data using a language called Structured Query Language (SQL). Examples are PostgreSQL, MySQL and Oracle.
 
 ### Real World Scenario:- 
@@ -269,6 +271,17 @@ A restaurant's holds a reservation book. Every entry follows the exact same form
 
 A banking application needs to store each transaction with an exact amount, a sender account, a receiver account and a timestamp. The data is highly structured and every record looks the same. Relationships does matter here as an account belongs to a customer, a transaction belongs to an account. A SQL database like PostgreSQL handles this perfectly because it enforces structure and ensures accuracy.
 
-SQL databases does maintain predefined schema, acid properties and strong consistency to hold the data in the database.
+SQL databases does maintain predefined schema, acid properties and strong consistency to hold the data in it.
 
-A NoSQL (Non-Relational) Database does not use tables or a fixed structure. Instead, it stores data in flexible formats — like documents, key-value pairs, or graphs. Each record can look completely different from the next. Examples include MongoDB, Redis, and Cassandra. NoSQL databases are best when your data varies in shape, changes frequently, or needs to handle massive scale.
+NOSQL
+
+A NoSQL Database (Non-Relational) does not use tables or fixed structure. Instead, it stores data in flexible formats like documents, key-value pairs, or graphs. Each record can look completely different from the next. Examples include MongoDB, Redis and Cassandra.
+
+### Real World Scenario:-
+
+A chef has his own personal notebook. One page has a recipe. The next page has a quick note stating "Table 7 is allergic to peanuts." Another page has a supplier's phone number. There is no fixed format where in each page stores whatever is needed at that moment. It is flexible and fast but not organized.
+
+### Technical Example:-
+
+Let us consider Instagram where One user's feed has photos, another has reels, another has stories with polls and stickers. The data varies wildly from user to user and changes constantly. A NoSQL database like MongoDB handles this well because it can store each user's activity as a flexible document without forcing every record into a same table format.
+
