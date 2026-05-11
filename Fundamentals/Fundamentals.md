@@ -246,8 +246,29 @@ In our restaurant, the kitchen needs to remember things such as what dishes are 
 
 The database is the restaurant's record system, A register where every order, every reservation and every inventory count is stored so it can be looked up at any time.
 
-### Technical Example
+### Technical Example:-
 
 When you create an account on Amazon, your name, email, password and address are sent to Amazon's server. The server doesn't just hold that data in temporary memory it writes it into a database. The next time you log in, the server queries the database, finds your record, verifies your password and loads your profile. When you place an order, a new entry is written to the database. When you check your order history, the server reads from the database and sends it back to your browser.
 
 Every action you take such as signing up, logging in, ordering, reviewing is a read or write operation against the database. 
+
+# 11. SQL VS NOSQL
+
+We know what a database is, the next question is how is the data actually organized inside it? Which depends on the type of database you choose. There are two major types:-
+
+→ SQL
+→ NOSQL
+
+A SQL Database (Relational Database) stores data in tables in the form of rows and columns like a spreadsheet. Every row follows the same fixed structure and tables can be linked to each other through relationships. You interact with the data using a language called Structured Query Language (SQL). Examples are PostgreSQL, MySQL and Oracle.
+
+### Real World Scenario:- 
+
+A restaurant's holds a reservation book. Every entry follows the exact same format — customer name, date, time, number of guests, table number. If you want to find all reservations for a particular date, you simply look down that column. It is structured, predictable and organized.
+
+### Technical Example:-
+
+A banking application needs to store each transaction with an exact amount, a sender account, a receiver account and a timestamp. The data is highly structured and every record looks the same. Relationships does matter here as an account belongs to a customer, a transaction belongs to an account. A SQL database like PostgreSQL handles this perfectly because it enforces structure and ensures accuracy.
+
+SQL databases does maintain predefined schema, acid properties and strong consistency to hold the data in the database.
+
+A NoSQL (Non-Relational) Database does not use tables or a fixed structure. Instead, it stores data in flexible formats — like documents, key-value pairs, or graphs. Each record can look completely different from the next. Examples include MongoDB, Redis, and Cassandra. NoSQL databases are best when your data varies in shape, changes frequently, or needs to handle massive scale.
