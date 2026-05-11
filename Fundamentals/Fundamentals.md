@@ -1,3 +1,13 @@
+"Fundamentals" the most important thing that holds a huge importance in each individual.
+
+Here we are to understand the core fundamental of System Design.
+
+In our day to day lives, we constantly use websites, applications mostly. In this AI driven world, 99.9% of people across the world will use applications and websites itself which make things simpler.
+
+For Curios Minds (like me & you) who want to understand how systems run in the backend, how architectures are designed internally, how applications function aand how modern advancements reduce the need for verbose manual code (make people more lazy) from the past in the present.
+
+Here goes the core fundamentals Of System Design that follows below:- 
+
 # 1. CLIENT - SERVER ARCHITECTURE
 
 Client-Server Architecture is a model where two parties communicate over a network — the client sends a request and the server sends back a response. The client is the one asking and the server is the one answering.
