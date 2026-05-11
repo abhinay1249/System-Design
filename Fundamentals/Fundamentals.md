@@ -121,6 +121,8 @@ If the company instead moves their server (or a copy of their data) to Mumbai, t
 
 Physical distance is a primary cause of network latency, which is why global systems use strategies like placing servers geographically closer to their users to reduce the delay.
 
+<img width="699" height="457" alt="image" src="https://github.com/user-attachments/assets/ff22ead0-d4cb-46ea-be3e-675e424a8ad5" />
+
 
 # 6. HTTP/HTTPS
 
