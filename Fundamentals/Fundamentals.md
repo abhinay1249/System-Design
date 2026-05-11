@@ -310,6 +310,8 @@ A chef has his own personal notebook. One page has a recipe. The next page has a
 
 Let us consider Instagram where One user's feed has photos, another has reels, another has stories with polls and stickers. The data varies wildly from user to user and changes constantly. A NoSQL database like MongoDB handles this well because it can store each user's activity as a flexible document without forcing every record into a same table format.
 
+<img width="521" height="210" alt="image" src="https://github.com/user-attachments/assets/ac42c918-2452-4b4e-a27e-7b63180922a2" />
+
 
 # 12. SCALING - VERTICAL SCALING
 
