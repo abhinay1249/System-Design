@@ -209,6 +209,8 @@ Consider X. When you interact with tweets, behind the scenes, your app is callin
 
 Each URL represents a specific resource (tweet), each HTTP method represents a specific action and each request is completely independent, the server does not need to remember what you did before. The response comes back in JSON format, containing the data your app needs to present on the screen.
 
+<img width="542" height="247" alt="image" src="https://github.com/user-attachments/assets/c4c0fbd0-d467-4ea0-9790-0974e2ac7bb0" />
+
 
 # 9. GRAPHQL
 
