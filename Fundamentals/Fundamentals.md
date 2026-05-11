@@ -296,6 +296,8 @@ A banking application needs to store each transaction with an exact amount, a se
 
 SQL databases does maintain predefined schema, acid properties and strong consistency to hold the data in it.
 
+<img width="319" height="225" alt="image" src="https://github.com/user-attachments/assets/74533633-57cb-4562-a67e-e0dbade6434d" />
+
 NOSQL
 
 A NoSQL Database (Non-Relational) does not use tables or fixed structure. Instead, it stores data in flexible formats like documents, key-value pairs, or graphs. Each record can look completely different from the next. Examples include MongoDB, Redis and Cassandra.
