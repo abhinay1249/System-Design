@@ -167,6 +167,8 @@ In this scenario, the menu is the API documentation (the rules defining what you
 
 Imagine you are using a ride-sharing app like Uber. Uber needs to show you a map of where your driver is, but Uber did not build their own global mapping system from scratch. Instead Uber uses the Google Maps API. When you open the Uber app, the app sends an HTTP request to the Google Maps API saying, "Can I get the map data for this specific location?". The Google Maps API receives the request, pulls the map data from Google's massive internal servers and sends it back to the Uber app to display on your screen. Uber gets to display world-class maps without ever having direct access to Google's backend code or private databases.
 
+<img width="533" height="249" alt="image" src="https://github.com/user-attachments/assets/274213ce-f79b-470a-8a4b-0aeb9f3307d6" />
+
 
 # 8. REST API
 
