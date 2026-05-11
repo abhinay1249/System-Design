@@ -333,6 +333,8 @@ Here is the catch, where in:-
 → More powerful servers becomes exponentially more expensive.
 → Single Point of Failure - Even if one issue rises then the server shall be down.
 
+<img width="683" height="317" alt="image" src="https://github.com/user-attachments/assets/726c333f-27ae-41ef-a91f-64c0ba6cbeb1" />
+
 
 # 13. HORIZONTAL SCALING
 
@@ -347,6 +349,8 @@ Our restaurant has upgraded its kitchen as much as physically possible, but orde
 ### Technical Example:-
 
 Netflix serves over 200 million users worldwide. It runs its application across hundreds of servers. When a user in India streams a movie then one server handles their request. When a user in the US streams at the same time, a different server handles theirs. If a new show launches and traffic spikes, Netflix spins up additional servers automatically to absorb the surge. Once the spike passes the extra servers are removed. This ability to scale in and out on demand is the core advantage of horizontal scaling.
+
+<img width="989" height="327" alt="image" src="https://github.com/user-attachments/assets/a9c9f8cb-bc70-4cf5-b79c-686bebdae4ef" />
 
 
 # 14. LOAD BALANCER
