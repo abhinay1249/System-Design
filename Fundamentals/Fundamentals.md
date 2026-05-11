@@ -322,3 +322,20 @@ Our restaurant has upgraded its kitchen as much as physically possible, but orde
 
 Netflix serves over 200 million users worldwide. It runs its application across hundreds of servers. When a user in India streams a movie then one server handles their request. When a user in the US streams at the same time, a different server handles theirs. If a new show launches and traffic spikes, Netflix spins up additional servers automatically to absorb the surge. Once the spike passes the extra servers are removed. This ability to scale in and out on demand is the core advantage of horizontal scaling.
 
+
+# 14. LOAD BALANCER
+
+With horizontal scaling, we now have multiple servers handling incoming traffic. But there will be a question stating when a request comes in, who decides which server should handle it? If all requests accidentally go to one server while the others sit idle, horizontal scaling becomes pointless.
+
+A Load Balancer is the component that is answer to the above question. It sits in front of all the servers and distributes incoming requests evenly across them, making sure no single server is overloaded while others are underutilized. If one server goes down, the load balancer detects it and stops sending traffic to it and routing requests to the remaining healthy servers instead.
+
+### Real World Scenario:-
+
+Our restaurant now has multiple order counters to handle the rush. But if there is no one managing the crowd then all customers might line up at the first counter while the other counters remain empty. To fix this the restaurant places a floor manager at the entrance. The floor manager looks at all the counters then sees which one has the shortest queue and directs each incoming customer to the least busy counter. This results every counter stays evenly loaded and customers get served faster. The floor manager is the load balancer.
+
+### Technical Example:-
+
+When you visit www.amazon.com, your request does not go directly to a single server. It first hits Amazon's load balancer. The load balancer checks which of the hundreds of backend servers is least busy at that moment and forwards your request over there. The next user's request might go to a completely different server. If one server crashes, the load balancer automatically removes it from the pool and redirects traffic to the others this cannot be noticed by the user.
+
+Common load balancers used in production include NGINX, HAProxy and cloud-managed solutions like AWS Elastic Load Balancer (ELB).
+
