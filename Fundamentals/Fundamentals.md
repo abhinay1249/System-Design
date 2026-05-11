@@ -272,6 +272,8 @@ When you create an account on Amazon, your name, email, password and address are
 
 Every action you take such as signing up, logging in, ordering, reviewing is a read or write operation against the database. 
 
+<img width="704" height="200" alt="image" src="https://github.com/user-attachments/assets/91c4e415-3847-4411-b368-03e1b464611a" />
+
 
 # 11. SQL VS NOSQL
 
