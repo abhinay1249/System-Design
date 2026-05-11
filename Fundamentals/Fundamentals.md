@@ -149,6 +149,8 @@ If the site used HTTP, your password would be sent over the internet as plain te
 
 Even if the hacker intercepts the network packet, all they see is encrypted data. The data remains encrypted during transit and is only decrypted once it safely reaches the bank's server, which holds the private key required to unlock it.
 
+<img width="535" height="363" alt="image" src="https://github.com/user-attachments/assets/fe3bbc2f-38d4-48ec-93e1-3dc6a718039e" />
+
 
 # 7. API
 
