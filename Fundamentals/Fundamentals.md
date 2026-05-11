@@ -252,6 +252,7 @@ When you create an account on Amazon, your name, email, password and address are
 
 Every action you take such as signing up, logging in, ordering, reviewing is a read or write operation against the database. 
 
+
 # 11. SQL VS NOSQL
 
 We know what a database is, the next question is how is the data actually organized inside it? Which depends on the type of database you choose. There are two major types:-
@@ -284,4 +285,40 @@ A chef has his own personal notebook. One page has a recipe. The next page has a
 ### Technical Example:-
 
 Let us consider Instagram where One user's feed has photos, another has reels, another has stories with polls and stickers. The data varies wildly from user to user and changes constantly. A NoSQL database like MongoDB handles this well because it can store each user's activity as a flexible document without forcing every record into a same table format.
+
+
+# 12. SCALING - VERTICAL SCALING
+
+When an application starts getting more users and more traffic, the server handling all those requests will struggle to keep it efficient. It becomes slow, overloaded and unresponsive. The solution is Scaling, by increasing the capacity of your system so it can handle more load.
+
+Vertical Scaling (also called scaling up). It means making your existing server more powerful by adding more CPU, more RAM, more storage to the same machine. You are not adding new servers; you are upgrading the one you already have. Vertical scaling is simple and straightforward but it has a hard limitatiton where in there is only so much hardware you can pack into a single machine. Even the most powerful server in the world will have a bottleneck at some point of time.
+
+### Real World Scenario:-
+
+Our restaurant is getting popular and the kitchen is struggling to handle the growing number of orders. One approach is to upgrade the kitchen itself by installing a bigger stove, add a larger oven, get a wider countertop. The same kitchen, the same space but with more powerful equipment so it can handle more orders at once. This works well up to a point, but there is a limit. You can only fit so much equipment into one kitchen before there is physically no more room to upgrade.
+
+### Technical Example:-
+
+A startup runs its entire application on a single server with 4 GB RAM and 2 CPU cores. As traffic grows, the server starts slowing down. The team vertically scales by upgrading to a machine with 32 GB RAM and 16 CPU cores. The application runs faster and handles more users without changing any code or architecture. But if traffic keeps growing, that single machine will eventually max out again and there is no bigger machine left to upgrade.
+
+
+Here is the catch, where in:-
+→ You cant keep upgarding a server forever.
+→ More powerful servers becomes exponentially more expensive.
+→ Single Point of Failure - Even if one issue rises then the server shall be down.
+
+
+# 13. HORIZONTAL SCALING
+
+We saw that vertical scaling has a bottleneck.As you need to upgrade a single machine itself. To overcome this we have a concept known as 
+
+Horizontal Scaling (also called scaling out) takes a completely different approach. Instead of making one server more powerful, you add more servers and distribute the load across them. Each server handles a portion of the incoming traffic such that no single machine is overwhelmed. If traffic grows further you simply add another server. There is no limit over here, you can keep adding machines as demand increases. This is why horizontal scaling is the preferred strategy for large-scale systems that is capable to serve millions of users.
+
+### Real World Scenario:-
+
+Our restaurant has upgraded its kitchen as much as physically possible, but orders are still piling up. Instead of trying to squeeze more into the same kitchen, the owner opens a second kitchen branch across town. Now orders are split between two kitchens. If demand grows even more, a third branch is opened. Each branch handles its own share of customers and together they serve far more people than a single location ever could.
+
+### Technical Example:-
+
+Netflix serves over 200 million users worldwide. It runs its application across hundreds of servers. When a user in India streams a movie then one server handles their request. When a user in the US streams at the same time, a different server handles theirs. If a new show launches and traffic spikes, Netflix spins up additional servers automatically to absorb the surge. Once the spike passes the extra servers are removed. This ability to scale in and out on demand is the core advantage of horizontal scaling.
 
