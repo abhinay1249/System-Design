@@ -12,15 +12,15 @@ Here goes the core fundamentals Of System Design that follows below:-
 
 # 1. CLIENT - SERVER ARCHITECTURE
 
-Client-Server Architecture is a model where two parties communicate over a network — the client sends a request and the server sends back a response. The client is the one asking and the server is the one answering.
+Client-Server Architecture is a model where two parties communicate over a network the client sends a request and the server sends back a response. The client is the one asking and the server is the one answering.
 
 ### Real World Scenario:- 
 
-Think of a restaurant. You are a customer (client). You call the waiter, place your order and wait. The kitchen (server) receives that order, prepares the food and sends it back to you through the waiter. You don't know how the kitchen works — you just asked and you received.
+Think of a restaurant. You are a customer (client). You call the waiter, place your order and wait. The kitchen (server) receives that order, prepares the food and sends it back to you through the waiter. You don't know how the kitchen works you just asked and you received.
 
 ### Technical Example:-
 
-When you type https://www.google.com in your browser, your browser (client) sends an HTTP GET request to Google's server. The server receives that request, processes it and sends back an HTTP response containing the HTML of the Google homepage. Your browser then renders it on your screen. The client and server are separate — they only interact through requests and responses over HTTP.
+When you type https://www.google.com in your browser, your browser (client) sends an HTTP GET request to Google's server. The server receives that request, processes it and sends back an HTTP response containing the HTML of the Google homepage. Your browser then renders it on your screen. The client and server are separate they only interact through requests and responses over HTTP.
 
   <img width="478" height="236" alt="Client-Server Architecture" src="https://github.com/user-attachments/assets/a9513b5a-7804-4dda-9d34-fe576c13d07f" />
 
@@ -33,7 +33,7 @@ For a client to communicate with a server, it needs the server's IP address to l
 
 ### Real World Scenario:- 
 
-Going back to our restaurant — before you can visit it, you need its address. Without the address, you wouldn't know where to go. Every restaurant has a unique address that sets it apart from every other place in the city. In the same way, every server on the internet has an IP address — a unique location that tells your request exactly where to be delivered.
+Going back to our restaurant before you can visit it, you need its address. Without the address, you wouldn't know where to go. Every restaurant has a unique address that sets it apart from every other place in the city. In the same way, every server on the internet has an IP address a unique location that tells your request exactly where to be delivered.
 
 ### Technical Example:-
 
@@ -41,7 +41,7 @@ Every device on a network is assigned an IP address, for example 142.250.190.78 
 
   <img width="657" height="223" alt="IP Address" src="https://github.com/user-attachments/assets/a004ed13-68c3-4783-a60e-8a230cb161ef" />
 
-In order to obtain the IP address from the domain name, a core concept is used — which is known as,
+In order to obtain the IP address from the domain name, a core concept is used which is known as,
 
 
 # 3. DOMAIN NAME SYSTEM (DNS)
@@ -57,7 +57,7 @@ Think of it like a restaurant directory service. You call up the directory and s
 
 When you type google.com in your browser, the following steps happen in milliseconds:
 
-1) Your browser asks the DNS Resolver (usually provided by your internet provider) — "What is the IP for google.com?"
+1) Your browser asks the DNS Resolver (usually provided by your internet provider) "What is the IP for google.com?"
 2) The DNS Resolver checks its cache. If it has seen this before, it returns the answer immediately.
 3) If not, it contacts the Root DNS Server, which points it toward the right direction.
 4) The resolver then queries the Authoritative DNS Server for google.com, which holds the definitive record.
@@ -74,11 +74,11 @@ A proxy is an intermediary, a middleman that stands between the client and the s
 
 ### Forward Proxy
 
-A Forward Proxy sits on the client's side. The client sends its request to the proxy and the proxy forwards it to the server on the client's behalf. The server never directly sees who the original client is — it only sees the proxy. This is commonly used to hide the client's identity, bypass restrictions, or filter outgoing traffic.
+A Forward Proxy sits on the client's side. The client sends its request to the proxy and the proxy forwards it to the server on the client's behalf. The server never directly sees who the original client is it only sees the proxy. This is commonly used to hide the client's identity, bypass restrictions, or filter outgoing traffic.
 
 ### Real World Scenario:-
 
-Think of a Forward Proxy like a personal assistant. You don't want to call the restaurant directly — so you ask your assistant to call on your behalf. The restaurant speaks to your assistant, not to you. You stay hidden behind that assistant. That assistant is the forward proxy.
+Think of a Forward Proxy like a personal assistant. You don't want to call the restaurant directly so you ask your assistant to call on your behalf. The restaurant speaks to your assistant, not to you. You stay hidden behind that assistant. That assistant is the forward proxy.
 
 ### Technical Example:-
 
@@ -92,11 +92,11 @@ A Reverse Proxy sits on the server's side. The client sends its request thinking
 
 ### Real World Scenario:-
 
-Think of a Reverse Proxy like the front desk or reception of a large hotel restaurant. You walk up to the front desk and place your request. The front desk doesn't cook the food — it figures out which kitchen section (the starters section, the main course section, the desserts section) should handle your order, routes it there and brings the response back to you. You never interacted with any specific kitchen directly. That front desk is the reverse proxy.
+Think of a Reverse Proxy like the front desk or reception of a large hotel restaurant. You walk up to the front desk and place your request. The front desk doesn't cook the food it figures out which kitchen section (the starters section, the main course section, the desserts section) should handle your order, routes it there and brings the response back to you. You never interacted with any specific kitchen directly. That front desk is the reverse proxy.
 
 ### Technical Example:-
 
-Reverse Proxy — When millions of users type www.netflix.com in their browser, they are not hitting a single Netflix server. Their request hits a reverse proxy first — in Netflix's case, this is managed through tools like NGINX or AWS CloudFront. The reverse proxy then routes each request to the appropriate backend service — one service for login, another for video streaming, another for recommendations — based on rules. The user never knows any of this is happening. To them, it is just Netflix.
+Reverse Proxy, When millions of users type www.netflix.com in their browser, they are not hitting a single Netflix server. Their request hits a reverse proxy first in Netflix's case, this is managed through tools like NGINX or AWS CloudFront. The reverse proxy then routes each request to the appropriate backend service one service for login, another for video streaming, another for recommendations based on rules. The user never knows any of this is happening. To them, it is just Netflix.
 
 This is why reverse proxies plays a major role in modern system design. They enable load distribution, SSL termination, caching, security filtering and centralized routing all without the client to be know anything about the backend infrastructure.
 
@@ -113,11 +113,11 @@ Simply put, latency is a measure of delay. It's the waiting period between takin
 
 Back in our restaurant, you've just placed your order with the waiter. The time it takes for the waiter to physically walk from your table to the kitchen to hand in the order ticket is your latency. If your table is right next to the kitchen, the waiter takes two steps and the delay is minimal (low latency). But if you are seated in the outdoor and the kitchen is all the way in the back of the building, the waiter has to walk much further, taking much longer to deliver the ticket (high latency).
 
-Notice that the food takes the exact same amount of time to cook in both cases. The delay isn't in the preparation (processing) — the delay is purely in the travel time.
+Notice that the food takes the exact same amount of time to cook in both cases. The delay isn't in the preparation (processing) the delay is purely in the travel time.
 
 ### Technical Example:-
 
-Imagine a user in Mumbai, India, trying to access a website hosted on a server in New York, USA. When they click a button, their HTTP request has to physically travel through thousands of miles of fiber-optic cables across oceans to reach New York and the response has to travel all the way back. Even near the speed of light, this immense distance causes a noticeable delay — perhaps around 250 milliseconds. This is high latency.
+Imagine a user in Mumbai, India, trying to access a website hosted on a server in New York, USA. When they click a button, their HTTP request has to physically travel through thousands of miles of fiber-optic cables across oceans to reach New York and the response has to travel all the way back. Even near the speed of light, this immense distance causes a noticeable delay perhaps around 250 milliseconds. This is high latency.
 
 If the company instead moves their server (or a copy of their data) to Mumbai, the data only has to travel a few miles. The response time drops to 20 milliseconds. This is low latency.
 
@@ -128,7 +128,7 @@ Physical distance is a primary cause of network latency, which is why global sys
 
 # 6. HTTP/HTTPS
 
-When a client and server talk to each other over a network, they need a shared language — a set of rules so they can understand each other. This is called a protocol. HTTP (Hypertext Transfer Protocol) is the universal language of the web. It defines how requests and responses are formatted and transmitted.
+When a client and server talk to each other over a network, they need a shared language a set of rules so they can understand each other. This is called a protocol. HTTP (Hypertext Transfer Protocol) is the universal language of the web. It defines how requests and responses are formatted and transmitted.
 
 HTTP : It transmits data in plain text. Anyone intercepting the network traffic can easily read it.
 
@@ -290,7 +290,7 @@ A SQL Database (Relational Database) stores data in tables in the form of rows a
 
 ### Real World Scenario:- 
 
-A restaurant's holds a reservation book. Every entry follows the exact same format — customer name, date, time, number of guests, table number. If you want to find all reservations for a particular date, you simply look down that column. It is structured, predictable and organized.
+A restaurant's holds a reservation book. Every entry follows the exact same format customer name, date, time, number of guests, table number. If you want to find all reservations for a particular date, you simply look down that column. It is structured, predictable and organized.
 
 ### Technical Example:-
 
@@ -375,11 +375,15 @@ Common load balancers used in production include NGINX, HAProxy and cloud-manage
 
 <img width="621" height="317" alt="image" src="https://github.com/user-attachments/assets/fcd9f453-952b-4186-89d5-0cf6262369b4" />
 
+
 # 15. INDEXING
 
-As a Database grows and stores millions or billions of records, finding a specific piece of data becomes slow. Without any optimization the database would have to scan through every single row to find what you are looking for just like flipping through an entire book page by page to find a single sentence.
+As a database grows and stores millions of records, finding one specific piece of information can get very slow. Without any help the database would have to go through every single record one by one until it finds what you are looking for.
 
-An Index is a shortcut. It is a separate and smaller data structure that the database maintains alongside your data that is designed to speed up lookups. Instead of scanning every row, the database checks the index first which points it directly to the exact location of the data it needs. This dramatically reduces the time it takes to retrieve information.
+An Index solves this by acting as a shortcut. Think of it like a table of contents in a book instead of reading every page to find a topic, you check the table of contents, it tells you the exact page number and you jump straight there. An index in a database works the same way it helps the database skip straight to the data it needs without scanning everything.
 
-The trade-off is that indexes take up additional storage space and they make write operations such as inserts, updates, deletes that will slightly slower down, because the index has to be updated too. But for read-heavy systems the performance gain is massive.
+### Real World Scenario:- 
 
+Imagine our restaurant has a thick recipe binder with hundreds of recipes. The chef needs to find the recipe for "Potato Fry." Without any help, the chef would have to flip through every single page until finding it that could take a long time.
+
+But the binder has an index page at the very front an alphabetical list of all dish names with their page numbers. The chef looks up "Potato Fry" sees it is on page 87 and opens directly to that page. The recipes themselves haven't changed the index just made finding the right one much faster.
