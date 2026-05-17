@@ -454,8 +454,29 @@ An e-commerce website like Flipkart stores product information such as name, pri
 With vertical partitioning, the product table is split. One table stores name, price and category which resembles small, fast to query, and accessed on every page load. A separate table stores description and images that are larger in size but only queried when a user opens a specific product page. This keeps the frequently accessed table lean and fast.
 
 
+# 19. CACHING
 
+Every time the server needs data, going all the way to the database takes time. But what if the same data is being requested again and again like a popular product page or a trending post? Querying the database every single time for the same result is wasteful and slow.
 
+Caching solves this by storing frequently accessed data in a fast, temporary layer that sits between the server and the database. When a request comes in, the server checks the cache first. If the data is there (called a cache hit), it is returned immediately without touching the database. If the data is not there (called a cache miss), the server fetches it from the database and then returns it to the client and also stores a copy in the cache so the next request for the same data is faster.
+
+Caches are much faster than databases because they store data in memory (RAM) rather than on disk. The trade-off is that cache storage is limited and temporary such as it is not meant to replace the database, just to speed up repeated access to the same data.
+
+A common question that arises after understanding the above trade-off is: if the data stored in the cache is temporary, what happens to it after some time? To manage this, cache systems use a concept called TTL (Time To Live). TTL defines how long a particular piece of data can remain in the cache. Once the specified TTL duration expires, the data is automatically removed from the cache and will no longer be available.
+
+Redis is one of the most used cache in real time.
+
+### Real World Scenario:-
+
+During dinner time at a restaurant, the chef notices that 8 out of 10 orders are for the same five popular dishes. Instead of going to the storage room every single time to fetch ingredients, the chef sets up a prep station right next to the stove with pre-chopped vegetables, spices and pre-portioned sauces for those five dishes. Now when an order comes in for a popular dish everything is already within near distance and no trip to the storage room needed.
+
+That prep station is the cache. It holds the most commonly needed items close by so the chef can work faster. If someone orders a rare dish that is not on the prep station, the chef goes to the storage room (the database), fetches what is needed and may even add it to the prep station if it starts getting ordered frequently.
+
+### Technical Example:-
+
+When millions of users visit a celebrity's Instagram profile, the server does not query the database for the same profile data every single time. The first time the profile is requested, the server fetches it from the database and stores a copy in a cache like Redis. For every subsequent request the server checks Redis first and finds the data is already there and returns it instantly without ever touching the database.
+
+This is why popular pages load just as fast no matter how many people are viewing them at the same time. The database is only hit once and the cache handles the rest.
 
 
 
