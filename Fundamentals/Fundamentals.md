@@ -519,7 +519,13 @@ Systems that need fast reads at massive scale like news feeds or dashboards ofte
 
 # 21. CAP THEOREM
 
+When you build a system that stores data across multiple servers (which we do with replication and sharding), three things become very important:
 
+Consistency (C) — Every server in the system has the exact same, most up-to-date data at all times. If a user updates their profile on one server, every other server should immediately reflect that change. No matter which server you ask, you always get the same answer.
+
+Availability (A) — The system always responds to every request, no matter what. Even if something goes wrong internally, the user never sees an error or a blank page they always get a response.
+
+Partition Tolerance (P) — The system continues to work even if the connection between servers breaks down. In a real-world network, servers communicate with each other constantly. A "partition" happens when that communication is disrupted and one server can no longer talk to another. Partition tolerance means the system does not collapse when this happens.
 
 
 
