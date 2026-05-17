@@ -474,9 +474,17 @@ That prep station is the cache. It holds the most commonly needed items close by
 
 ### Technical Example:-
 
-When millions of users visit a celebrity's Instagram profile, the server does not query the database for the same profile data every single time. The first time the profile is requested, the server fetches it from the database and stores a copy in a cache like Redis. For every subsequent request the server checks Redis first and finds the data is already there and returns it instantly without ever touching the database.
+a) When millions of users visit a celebrity's Instagram profile, the server does not query the database for the same profile data every single time. The first time the profile is requested, the server fetches it from the database and stores a copy in a cache like Redis. For every subsequent request the server checks Redis first and finds the data is already there and returns it instantly without ever touching the database.
 
 This is why popular pages load just as fast no matter how many people are viewing them at the same time. The database is only hit once and the cache handles the rest.
+
+b) This scenario helps in understanding how cache works in real-time applications.
+
+Suppose you will open the PhonePe application and check your account balance. The system fetches the balance from the database, 
+For example Rs.49000, and stores this result temporarily in the cache for faster future access. Now, within a few seconds Rs. 1000 gets credited to your bank account. Ideally, your updated balance should now be Rs.50000. However, when you check the balance again, the application may fetch the old value (Rs.50000) from the cache instead of querying the database again. This happens because the cached data has not yet expired. 
+
+In this challenging scenario there have been few cache consistent strategies to avoid such kind of race condition. One of it is the most common one known as Cache-Aside Pattern. This pattern ensures that the data that holds in cache is updated at database level then the cache will internally get updated with the changes to the data taken place at database level. To ensure the response provided is accurate. 
+
 
 
 
