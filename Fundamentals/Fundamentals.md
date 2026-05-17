@@ -483,7 +483,9 @@ b) This scenario helps in understanding how cache works in real-time application
 Suppose you will open the PhonePe application and check your account balance. The system fetches the balance from the database, 
 For example Rs.49000, and stores this result temporarily in the cache for faster future access. Now, within a few seconds Rs. 1000 gets credited to your bank account. Ideally, your updated balance should now be Rs.50000. However, when you check the balance again, the application may fetch the old value (Rs.50000) from the cache instead of querying the database again. This happens because the cached data has not yet expired. 
 
-In this challenging scenario there have been few cache consistent strategies to avoid such kind of race condition. One of it is the most common one known as Cache-Aside Pattern. This pattern ensures that the data that holds in cache is updated at database level then the cache will internally get updated with the changes to the data taken place at database level. To ensure the response provided is accurate. 
+In this challenging scenario there have been few cache consistent strategies to avoid such kind of race condition. One of it is the most common one known as Cache-Aside Pattern. This pattern ensures that once the database update is successful, the cache is either updated with the latest value internally or the existing cached data is invalidated (removed). During the next read operation, the latest data is fetched and stored back into the cache.
+
+
 
 
 
