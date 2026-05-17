@@ -435,6 +435,28 @@ A social media platform like Instagram has over a billion users. Storing all the
 Instead, Instagram shards its database by region. Users from India are stored in one database server, users from the US in another and  users from Europe in another. When a user from India logs in the system knows to query the India shard directly such as it never touches the US or Europe shards. This keeps each database smaller, faster and more manageable. As the user base grows in a new region, a new shard is simply added for that region.
 
 
+# 18. VERTICAL PARTITIONING
+
+With sharding, we split the data by rows in different groups of records that go to different databases. But there is another way to split data by columns. That is Vertical Partitioning.
+
+Instead of keeping all the information about something in one place, vertical partitioning separates it into groups based on what is accessed together. Columns that are frequently used are kept in one table or database and columns that are rarely used are of very large in size and are moved to a separate one. This way, when the system needs to read the commonly accessed data, it does not have to load all the heavy, rarely needed data along with it making queries faster and more efficient.
+
+### Real World Scenario:-
+
+In our restaurant, each recipe in the book contains two things, the cooking steps and the full ingredient list with supplier details. The chef uses the cooking steps every single time an order comes in but the ingredient and supplier details are only needed once a week when restocking.
+
+So the owner splits the book into two. One book has just the cooking steps which is light, quick to flip through and used constantly. The other book has the ingredient and supplier details that are heavier but only pulled out when needed. The chef's daily work becomes faster because the book on the counter only contains what is needed in the moment.
+
+### Technical Example:-
+
+An e-commerce website like Flipkart stores product information such as name, price, category, description and high-resolution images. Every time a user browses the product listing page, the system only needs the name, price and category. The large description and heavy images are only needed when the user clicks into a specific product.
+
+With vertical partitioning, the product table is split. One table stores name, price and category which resembles small, fast to query, and accessed on every page load. A separate table stores description and images that are larger in size but only queried when a user opens a specific product page. This keeps the frequently accessed table lean and fast.
+
+
+
+
+
 
 
 
