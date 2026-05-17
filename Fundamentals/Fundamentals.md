@@ -474,17 +474,47 @@ That prep station is the cache. It holds the most commonly needed items close by
 
 ### Technical Example:-
 
-a) When millions of users visit a celebrity's Instagram profile, the server does not query the database for the same profile data every single time. The first time the profile is requested, the server fetches it from the database and stores a copy in a cache like Redis. For every subsequent request the server checks Redis first and finds the data is already there and returns it instantly without ever touching the database.
+1) When millions of users visit a celebrity's Instagram profile, the server does not query the database for the same profile data every single time. The first time the profile is requested, the server fetches it from the database and stores a copy in a cache like Redis. For every subsequent request the server checks Redis first and finds the data is already there and returns it instantly without ever touching the database.
 
 This is why popular pages load just as fast no matter how many people are viewing them at the same time. The database is only hit once and the cache handles the rest.
 
-b) This scenario helps in understanding how cache works in real-time applications.
+2) This scenario helps in understanding how cache works in real-time applications.
 
 Suppose you will open the PhonePe application and check your account balance. The system fetches the balance from the database, 
 For example Rs.49000, and stores this result temporarily in the cache for faster future access. Now, within a few seconds Rs. 1000 gets credited to your bank account. Ideally, your updated balance should now be Rs.50000. However, when you check the balance again, the application may fetch the old value (Rs.50000) from the cache instead of querying the database again. This happens because the cached data has not yet expired. 
 
 In this challenging scenario there have been few cache consistent strategies to avoid such kind of race condition. One of it is the most common one known as Cache-Aside Pattern. This pattern ensures that once the database update is successful, the cache is either updated with the latest value internally or the existing cached data is invalidated (removed). During the next read operation, the latest data is fetched and stored back into the cache.
 
+
+# 20. NORMALIZATION - DENORMALIZATION
+
+When storing data in a database, you have to decide how to organize it. There are two approaches.
+
+1) Normalization
+2) Denormalization
+
+Normalization means splitting your data across multiple tables to avoid repetition. Each piece of information is stored only once and tables reference each other when they need related data. This keeps the data clean, consistent and easy to update but when you need to read something, the database may have to look across several tables and join them together which can be slower.
+
+Denormalization is the opposite. It means combining related data back into a single table, even if that causes some information to be repeated. This makes reading faster because the database can grab everything it needs from one place without joining multiple tables but updating becomes harder because the same data may exist in more than one place and all copies need to stay in sync.
+
+In short, Normalization prioritizes clean and organized storage. Denormalization prioritizes fast reads.
+
+### Real World Scenario:-
+
+In our restaurant, every recipe uses ingredients from various suppliers. 
+
+The normalized approach is to keep a separate supplier list of each recipe just mentions the ingredient name and if you need supplier details, you look them up in the supplier list. Clean and no repetition but you have to check two places every time.
+
+The denormalized approach is to write the supplier name and phone number directly on every recipe page that uses their ingredients. Now the chef has everything on one page without flipping anywhere else faster to read but if a supplier changes their phone number then you have to update it on every single recipe page where it appears.
+
+### Technical Example:-
+
+An online store has a table for orders and a separate table for customer details. In a normalized setup, the orders table only stores the customer ID. To display an order with the customer's name and address the database has to join both tables which is accurate but takes more time.
+
+In a denormalized setup, the customer's name and address are stored directly inside the orders table alongside each order. Now displaying an order is instant with one table and one query. But if the customer updates their address then it has to be changed in every order record where it was copied.
+
+Systems that need strict accuracy like banking uses Normalization.
+Systems that need fast reads at massive scale like news feeds or dashboards often uses Denormalization strategy. 
 
 
 
