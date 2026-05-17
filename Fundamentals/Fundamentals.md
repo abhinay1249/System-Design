@@ -517,6 +517,8 @@ Systems that need strict accuracy like banking uses Normalization.
 Systems that need fast reads at massive scale like news feeds or dashboards often uses Denormalization. 
 
 
+# 21. CAP THEOREM
+
 
 
 
