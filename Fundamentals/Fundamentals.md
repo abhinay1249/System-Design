@@ -227,7 +227,7 @@ REST APIs work well, but they come with a limitation. They return fixed data str
 
 ### Real World Scenario:-
 
-Back in our restaurant, with the REST approach. You order a "Burger Combo Meal" and the kitchen sends you a burger, fries, a drink, a salad, and a dessert. But you only wanted the burger, fries and the drink. You got a lot more than you asked for (over-fetching). Or maybe you ordered the burger but it didn't come with potato chips, so you have to place a second order just for potatochips (under-fetching).
+Back in our restaurant, with the REST approach. You order a "Burger Combo Meal" and the kitchen sends you a burger, fries, a drink, a salad and a dessert. But you only wanted the burger, fries and the drink. You got a lot more than you asked for (over-fetching). Or maybe you ordered the burger but it didn't come with potato chips, so you have to place a second order just for potatochips (under-fetching).
 
 With GraphQL approach, You are handed a blank order slip and you write down exactly what you want, "I want a burger and drink itself". The kitchen reads your custom slip and sends you precisely a burger and drink. No extra salad you didn't ask for. No second trip to the waiter. You got exactly what you requested in a single order.
 
@@ -375,8 +375,11 @@ Common load balancers used in production include NGINX, HAProxy and cloud-manage
 
 <img width="621" height="317" alt="image" src="https://github.com/user-attachments/assets/fcd9f453-952b-4186-89d5-0cf6262369b4" />
 
+# 15. INDEXING
 
-Until, here the fundamental concepts till the servers is presented. Hope this would be useful and helpful for the basic understanding of how the backend systems runs which is completely unknown for the user on the frontend screen. Let us move ahead and deep dive into the core part of the databases section in Part - 2. Stay Tuned.
+As a Database grows and stores millions or billions of records, finding a specific piece of data becomes slow. Without any optimization the database would have to scan through every single row to find what you are looking for just like flipping through an entire book page by page to find a single sentence.
 
+An Index is a shortcut. It is a separate and smaller data structure that the database maintains alongside your data that is designed to speed up lookups. Instead of scanning every row, the database checks the index first which points it directly to the exact location of the data it needs. This dramatically reduces the time it takes to retrieve information.
 
+The trade-off is that indexes take up additional storage space and they make write operations such as inserts, updates, deletes that will slightly slower down, because the index has to be updated too. But for read-heavy systems the performance gain is massive.
 
