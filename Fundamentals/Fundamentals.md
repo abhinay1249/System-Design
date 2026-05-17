@@ -395,3 +395,29 @@ When you go to Amazon and search for "wireless headphones". Amazon's database ha
 Instead, Amazon keeps an index on the product names. When you search the database looks at the index first and quickly finds where "wireless headphones" is located and pulls up the results almost instantly. The index is the reason your search results appear in milliseconds instead of minutes.
 
 
+# 16. REPLICATION
+
+We saw that Indexing helps to speed up how fast the database finds data. But what happens when millions of users are reading from the same database at the same time? Even with indexes, a single database can only handle so many requests before it becomes a bottleneck. There is a risk, if one database crashes then all your data becomes inaccessible.
+
+Replication solves both problems. It is the practice of creating and maintaining copies of your database across multiple servers. There is one primary database (also called as master database) and one or more replica databases (also called slave databases). All write operations such as inserts, updates, deletes happen on the primary database. All read operations are directed to the replica databases. This way, the primary is not occupied with handling both reads and writes at the same time, and the read load is distributed across multiple replicas. Once the inserts/updates/deletes are performed in the primary database they are simply replicated to the replica databases such that it maintains uniformity across all the replica databases and primary database upto date.
+
+If the primary database ever goes down one of the replica database can take over, ensuring your system stays available and no data is lost.
+
+### Real World Scenario:-
+
+Our restaurant's original branch has a master recipe book where all new recipes are added and existing ones are updated. But every branch also has a copy of that book for their chefs to read from.
+
+Whenever a new recipe is created or an existing one is changed, it is written into the master book at the original branch and then copied to all the other branches. The chefs at the other branches never write into their book they only read from them. In this way the original branch is not flooded with calls from every chef asking for recipes, and if the master book is ever damaged, the copies at the other branches still have the respective book and will be converted into a master book.
+
+### Technical Example:-
+
+A banking application has millions of customers checking their balances and transaction history throughout the day. If all those read requests hit the same database that is also processing new transactions (writes), it would slow down everything.
+
+Instead, the bank uses one primary database for all writes such as every new transaction, every account update goes here. It then maintains two replica databases that are kept in sync with the primary. All read requests such as checking balances, viewing statements are routed to the replicas. This splits the traffic so no single database is overwhelmed, If the primary crashes then one of the replicas is promoted to become the new primary and the system continues without the customer ever noticing.
+
+
+
+
+
+
+
