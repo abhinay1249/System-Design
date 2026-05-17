@@ -416,6 +416,24 @@ A banking application has millions of customers checking their balances and tran
 Instead, the bank uses one primary database for all writes such as every new transaction, every account update goes here. It then maintains two replica databases that are kept in sync with the primary. All read requests such as checking balances, viewing statements are routed to the replicas. This splits the traffic so no single database is overwhelmed, If the primary crashes then one of the replicas is promoted to become the new primary and the system continues without the customer ever noticing.
 
 
+# 17. SHARDING
+
+With replication, we create copies of the same data across multiple servers to handle more reads and provide backup. But what happens when the data itself becomes so massive that a single database cannot store it all? No matter how many replicas you create each one still holds the entire dataset, one machine simply cannot hold everything.
+
+Sharding solves this by splitting the data itself across multiple databases. Instead of every database holding all the data each database holds only a portion of it. Each portion is called a shard. For example, you could split users by region such as users from Asia go to Shard 1, users from Europe go to Shard 2 and users from America go to Shard 3. Each shard is a separate database that is responsible for only its own slice of data. This means no single database has to store or process everything and the system can scale to handle enormous amounts of data.
+
+### Real World Scenario:-
+
+Our restaurant has grown massively and now serves hundreds of dishes. One kitchen trying to handle every type of dish such as starters, main course, desserts, beverages is chaotic and slow.
+
+So the owner decides to split the menu across specialized kitchens. Kitchen A handles only starters. Kitchen B handles only main course items. Kitchen C handles only desserts. Each kitchen stores only the recipes it is responsible for and handles only the orders related to its section. No single kitchen is overloaded with everything and each one works faster because it focuses on a smaller set of items. Each of those specialized kitchens is a Shard.
+
+### Technical Example:-
+
+A social media platform like Instagram has over a billion users. Storing all their profiles, posts and messages in a single database is simply not possible the data is too large for one machine.
+
+Instead, Instagram shards its database by region. Users from India are stored in one database server, users from the US in another and  users from Europe in another. When a user from India logs in the system knows to query the India shard directly such as it never touches the US or Europe shards. This keeps each database smaller, faster and more manageable. As the user base grows in a new region, a new shard is simply added for that region.
+
 
 
 
