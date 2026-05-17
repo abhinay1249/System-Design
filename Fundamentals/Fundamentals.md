@@ -527,6 +527,8 @@ Availability (A) — The system always responds to every request, no matter what
 
 Partition Tolerance (P) — The system continues to work even if the connection between servers breaks down. In a real-world network, servers communicate with each other constantly. A "partition" happens when that communication is disrupted and one server can no longer talk to another. Partition tolerance means the system does not collapse when this happens.
 
+The CAP Theorem states that in any distributed system you can only guarantee two out of these three at the same time but never all three. When a network partition happens (and in real systems, it eventually will), you are forced to make a choice: do you prioritize consistency (make sure data is correct, even if it means some requests are rejected) or availability (make sure every request gets a response, even if the data might be slightly outdated)?
 
+This is not a design flaw, it is a fundamental rule of how distributed systems work.
 
 
