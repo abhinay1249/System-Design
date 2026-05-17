@@ -386,4 +386,10 @@ An Index solves this by acting as a shortcut. Think of it like a table of conten
 
 Imagine our restaurant has a thick recipe binder with hundreds of recipes. The chef needs to find the recipe for "Potato Fry." Without any help, the chef would have to flip through every single page until finding it that could take a long time.
 
-But the binder has an index page at the very front an alphabetical list of all dish names with their page numbers. The chef looks up "Potato Fry" sees it is on page 87 and opens directly to that page. The recipes themselves haven't changed the index just made finding the right one much faster.
+But the receipe book has an index page at the very front an alphabetical list of all dish names with their page numbers. The chef looks up "Potato Fry" sees it is on page 87 and opens directly to that page. The recipes themselves haven't changed the index just made finding the right one much faster.
+
+### Technical Example:-
+
+When you go to Amazon and search for "wireless headphones". Amazon's database has hundreds of millions of products stored. Without an index the database would check every single product one by one to see if the name matches that would take far too long.
+
+Instead, Amazon keeps an index on the product names. When you search the database looks at the index first and quickly finds where "wireless headphones" is located and pulls up the results almost instantly. The index is the reason your search results appear in milliseconds instead of minutes.
