@@ -514,7 +514,7 @@ An online store has a table for orders and a separate table for customer details
 In a denormalized setup, the customer's name and address are stored directly inside the orders table alongside each order. Now displaying an order is instant with one table and one query. But if the customer updates their address then it has to be changed in every order record where it was copied.
 
 Systems that need strict accuracy like banking uses Normalization.
-Systems that need fast reads at massive scale like news feeds or dashboards often uses Denormalization strategy. 
+Systems that need fast reads at massive scale like news feeds or dashboards often uses Denormalization. 
 
 
 
