@@ -393,3 +393,5 @@ But the receipe book has an index page at the very front an alphabetical list of
 When you go to Amazon and search for "wireless headphones". Amazon's database has hundreds of millions of products stored. Without an index the database would check every single product one by one to see if the name matches that would take far too long.
 
 Instead, Amazon keeps an index on the product names. When you search the database looks at the index first and quickly finds where "wireless headphones" is located and pulls up the results almost instantly. The index is the reason your search results appear in milliseconds instead of minutes.
+
+
