@@ -531,4 +531,6 @@ The CAP Theorem states that in any distributed system you can only guarantee two
 
 This is not a design flaw, it is a fundamental rule of how distributed systems work.
 
+### Real World Scenario:- 
+
 
