@@ -547,7 +547,9 @@ Neither option is wrong, it depends on what matters more for that restaurant.
 
 A banking application cannot show a wrong account balance. If a user transfers money and one server has not yet received the update, showing the old balance could lead to double spending. So banks choose Consistency over Availability, if the servers cannot confirm they are in sync, the system will reject the request or show an error rather than display incorrect data. This is a CP [Consistent - Partition] system.
 
-A social media feed like Twitter prioritizes keeping the experience alive. If one server has not received the latest tweet yet, it is perfectly acceptable to show the feed without it — the tweet will appear a few seconds later. Twitter chooses Availability over Consistency — every request gets a response even if the data is slightly behind. This is an AP [Availability - Partition] system.
+A social media feed like Twitter prioritizes keeping the experience alive. If one server has not received the latest tweet yet, it is perfectly acceptable to show the feed without it, the tweet will appear a few seconds later. Twitter chooses Availability over Consistency, every request gets a response even if the data is slightly behind. This is an AP [Availability - Partition] system.
 
 In both cases, Partition Tolerance is always present because network failures are unavoidable in the real world. The real decision is always between Consistency and Availability.
+
+
 
