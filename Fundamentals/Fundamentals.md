@@ -562,10 +562,10 @@ This is where Blob Storage comes in. Blob stands for Binary Large Object. Blob s
 
 ### Real World Scenario:- 
 
-Our restaurant's kitchen has shelves for everyday items such as spices, sauces, utensils. These shelves are organized and easy to access. But the kitchen also receives bulk supplies — 50 kg sacks of rice, crates of vegetables, large drums of oil. Trying to fit all of that on the kitchen shelves would make everything cluttered and slow to navigate.
+Our restaurant's kitchen has shelves for everyday items such as spices, sauces, utensils. These shelves are organized and are easy to access. But the kitchen also receives bulk supplies such as 50 kg of rice, boxes of vegetables, large tins of oil. Trying to fit all of that on the kitchen shelves would make everything cluttered and slow to navigate.
 
-So the owner rents a separate warehouse nearby for all the bulk items. The kitchen shelves only keep a note — "Rice: Warehouse, Shelf 3, Row B." When the chef needs rice, they check the note and fetch it from the warehouse. The kitchen stays clean and organized, and the warehouse handles the heavy storage.
+So the owner rents a separate warehouse nearby for all the bulk items. The kitchen shelves only keep a note like "Rice: Warehouse, Shelf 3, Row B." When the chef needs rice, they check the note and fetch it from the warehouse. The kitchen stays clean and organized and the warehouse handles the heavy storage.
 
-That warehouse is blob storage. The note on the kitchen shelf is the URL stored in the database.
+That warehouse is Blob storage. The note on the kitchen shelf is the URL stored in the database.
 
 
