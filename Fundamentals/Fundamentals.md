@@ -399,7 +399,7 @@ Instead, Amazon keeps an index on the product names. When you search the databas
 
 We saw that Indexing helps to speed up how fast the database finds data. But what happens when millions of users are reading from the same database at the same time? Even with indexes, a single database can only handle so many requests before it becomes a bottleneck. There is a risk, if one database crashes then all your data becomes inaccessible.
 
-Replication solves both problems. It is the practice of creating and maintaining copies of your database across multiple servers. There is one primary database (also called as master database) and one or more replica databases (also called slave databases). All write operations such as inserts, updates, deletes happen on the primary database. All read operations are directed to the replica databases. This way, the primary is not occupied with handling both reads and writes at the same time, and the read load is distributed across multiple replicas. Once the inserts/updates/deletes are performed in the primary database they are simply replicated to the replica databases such that it maintains uniformity across all the replica databases and primary database upto date.
+Replication solves both problems. It is the practice of creating and maintaining copies of your database across multiple servers. There is one primary database (also called as master database) and one or more replica databases (also called slave databases). All write operations such as inserts, updates, deletes happen on the primary database. All read operations are directed to the replica databases. This way, the primary is not occupied with handling both reads and writes at the same time and the read load is distributed across multiple replicas. Once the inserts/updates/deletes are performed in the primary database they are simply replicated to the replica databases such that it maintains uniformity across all the replica databases and primary database upto date.
 
 If the primary database ever goes down one of the replica database can take over, ensuring your system stays available and no data is lost.
 
@@ -407,7 +407,7 @@ If the primary database ever goes down one of the replica database can take over
 
 Our restaurant's original branch has a master recipe book where all new recipes are added and existing ones are updated. But every branch also has a copy of that book for their chefs to read from.
 
-Whenever a new recipe is created or an existing one is changed, it is written into the master book at the original branch and then copied to all the other branches. The chefs at the other branches never write into their book they only read from them. In this way the original branch is not flooded with calls from every chef asking for recipes, and if the master book is ever damaged, the copies at the other branches still have the respective book and will be converted into a master book.
+Whenever a new recipe is created or an existing one is changed, it is written into the master book at the original branch and then copied to all the other branches. The chefs at the other branches never write into their book they only read from them. In this way the original branch is not flooded with calls from every chef asking for recipes and if the master book is ever damaged, the copies at the other branches still have the respective book and will be converted into a master book.
 
 ### Technical Example:-
 
@@ -451,7 +451,7 @@ So the owner splits the book into two. One book has just the cooking steps which
 
 An e-commerce website like Flipkart stores product information such as name, price, category, description and high-resolution images. Every time a user browses the product listing page, the system only needs the name, price and category. The large description and heavy images are only needed when the user clicks into a specific product.
 
-With vertical partitioning, the product table is split. One table stores name, price and category which resembles small, fast to query, and accessed on every page load. A separate table stores description and images that are larger in size but only queried when a user opens a specific product page. This keeps the frequently accessed table lean and fast.
+With vertical partitioning, the product table is split. One table stores name, price and category which resembles small, fast to query and accessed on every page load. A separate table stores description and images that are larger in size but only queried when a user opens a specific product page. This keeps the frequently accessed table lean and fast.
 
 
 # 19. CACHING
@@ -481,7 +481,7 @@ This is why popular pages load just as fast no matter how many people are viewin
 2) This scenario helps in understanding how cache works in real-time applications.
 
 Suppose you will open the PhonePe application and check your account balance. The system fetches the balance from the database, 
-For example Rs.49000, and stores this result temporarily in the cache for faster future access. Now, within a few seconds Rs. 1000 gets credited to your bank account. Ideally, your updated balance should now be Rs.50000. However, when you check the balance again, the application may fetch the old value (Rs.50000) from the cache instead of querying the database again. This happens because the cached data has not yet expired. 
+For example Rs.49000 and stores this result temporarily in the cache for faster future access. Now, within a few seconds Rs. 1000 gets credited to your bank account. Ideally, your updated balance should now be Rs.50000. However, when you check the balance again, the application may fetch the old value (Rs.50000) from the cache instead of querying the database again. This happens because the cached data has not yet expired. 
 
 In this challenging scenario there have been few cache consistent strategies to avoid such kind of race condition. One of it is the most common one known as Cache-Aside Pattern. This pattern ensures that once the database update is successful, the cache is either updated with the latest value internally or the existing cached data is invalidated (removed). During the next read operation, the latest data is fetched and stored back into the cache.
 
@@ -572,7 +572,7 @@ That warehouse is Blob storage. The note on the kitchen shelf is the URL stored 
 
 When you upload a video to YouTube then that video file could be several gigabytes in size. YouTube does not store the actual video inside a database. Instead, the video is uploaded to Google Cloud Storage (a blob storage service). The database only stores the video's metadata such as title, description, upload date and the URL pointing to where the video file lives in cloud storage. When someone watches the video, the browser uses that URL to stream the file directly from blob storage.
 
-Common blob storage services include Amazon S3, Google Cloud Storage, and Azure Blob Storage.
+Common blob storage services include Amazon S3, Google Cloud Storage and Azure Blob Storage.
 
 
 # 23. CDN
@@ -587,6 +587,6 @@ CDNs are especially useful for serving static content such as images, videos, CS
 
 Our restaurant is based in one location, but customers from all across the city are ordering the same popular dishes for takeaway. If every single order has to be prepared and delivered from the original kitchen, customers on the far side of the city will wait much longer than those nearby to the restaurant.
 
-To fix this, the owner sets up small satellite food counters in different parts of the city. Each counter keeps a stock of the most popular dishes, ready to serve. When a customer places an order, it is fulfilled by the nearest counter instead of the main kitchen. The food reaches the customer faster, and the main kitchen is not overwhelmed with every single order.
+To fix this, the owner sets up small satellite food counters in different parts of the city. Each counter keeps a stock of the most popular dishes that are ready to serve. When a customer places an order, it will be provided by the nearest counter instead of the main kitchen. The food reaches the customer faster and the main kitchen is not overwhelmed with every single order.
 
-Those satellite counters are the CDN's edge servers.
+Those satellite counters are the CDN edge servers.
