@@ -568,4 +568,13 @@ So the owner rents a separate warehouse nearby for all the bulk items. The kitch
 
 That warehouse is Blob storage. The note on the kitchen shelf is the URL stored in the database.
 
+### Technical Example:- 
+
+When you upload a video to YouTube then that video file could be several gigabytes in size. YouTube does not store the actual video inside a database. Instead, the video is uploaded to Google Cloud Storage (a blob storage service). The database only stores the video's metadata such as title, description, upload date and the URL pointing to where the video file lives in cloud storage. When someone watches the video, the browser uses that URL to stream the file directly from blob storage.
+
+Common blob storage services include Amazon S3, Google Cloud Storage, and Azure Blob Storage.
+
+
+
+
 
