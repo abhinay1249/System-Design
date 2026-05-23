@@ -533,4 +533,21 @@ This is not a design flaw, it is a fundamental rule of how distributed systems w
 
 ### Real World Scenario:- 
 
+A restaurant has two kitchen branches, Branch A and Branch B. They share the same menu and keep each other updated over a phone line. If a dish is removed from the menu at Branch A they call Branch B to update them.
+
+Now imagine the phone line goes down (this is the partition). A customer at Branch B orders a dish that Branch A just removed from the menu. Branch B has no way to know about the change. Now the restaurant has two choices:
+
+Choose Consistency:- Branch B says, I'm not sure if this dish is still available. Let me not serve it until, I can confirm with Branch A.The customer gets no food (the request is rejected) but the restaurant avoids serving something that is no longer on the menu.
+
+Choose Availability:- Branch B says, I will serve what I have on my current menu. The customer will get their food (the request is fulfilled) but there is a chance the dish is outdated and no longer supposed to be served.
+
+Neither option is wrong, it depends on what matters more for that restaurant.
+
+### Technical Example:-
+
+A banking application cannot show a wrong account balance. If a user transfers money and one server has not yet received the update, showing the old balance could lead to double spending. So banks choose Consistency over Availability, if the servers cannot confirm they are in sync, the system will reject the request or show an error rather than display incorrect data. This is a CP [Consistent - Partition] system.
+
+A social media feed like Twitter prioritizes keeping the experience alive. If one server has not received the latest tweet yet, it is perfectly acceptable to show the feed without it — the tweet will appear a few seconds later. Twitter chooses Availability over Consistency — every request gets a response even if the data is slightly behind. This is an AP [Availability - Partition] system.
+
+In both cases, Partition Tolerance is always present because network failures are unavoidable in the real world. The real decision is always between Consistency and Availability.
 
