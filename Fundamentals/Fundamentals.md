@@ -590,3 +590,10 @@ Our restaurant is based in one location, but customers from all across the city 
 To fix this, the owner sets up small satellite food counters in different parts of the city. Each counter keeps a stock of the most popular dishes that are ready to serve. When a customer places an order, it will be provided by the nearest counter instead of the main kitchen. The food reaches the customer faster and the main kitchen is not overwhelmed with every single order.
 
 Those satellite counters are the CDN edge servers.
+
+### Technical Example:-
+
+When a user in Mumbai opens Netflix and presses play on a movie, the video does not stream all the way from Netflix's main servers in the US. Netflix uses a CDN to store copies of popular movies and shows on edge servers located in cities around the world that will include servers near Mumbai. The video streams from the nearest edge server, so it starts playing almost instantly with minimal buffering.
+
+Popular CDN providers include Cloudflare, AWS CloudFront and Akamai.
+
