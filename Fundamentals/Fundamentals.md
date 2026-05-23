@@ -577,7 +577,7 @@ Common blob storage services include Amazon S3, Google Cloud Storage, and Azure 
 
 # 23. CDN
 
-We know that large files like images and videos are stored in blob storage, and we know from the latency concept that the farther the user is from the server, the longer it takes to get a response. So if your blob storage is in the US and a user in India requests a video, that file has to travel thousands of miles — resulting in slow load times.
+We know that large files like images and videos are stored in blob storage and we know from the latency concept that farther the user is from the server, the longer it takes to get a response. So if your blob storage is in the US and a user is in India requests a video, that file has to travel thousands of miles which will be resulting in slow load times.
 
 A CDN (Content Delivery Network) solves this by placing copies of your files on multiple servers spread across different locations around the world. These servers are called edge servers. When a user requests a file, instead of fetching it from the original server far away, the CDN delivers it from the nearest edge server — the one closest to the user's location. This dramatically reduces latency and makes content load much faster.
 
