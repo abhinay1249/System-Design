@@ -552,4 +552,20 @@ A social media feed like Twitter prioritizes keeping the experience alive. If on
 In both cases, Partition Tolerance is always present because network failures are unavoidable in the real world. The real decision is always between Consistency and Availability.
 
 
+# 22. BLOB STORAGE
+
+We know that databases are great for storing structured data like names, emails, prices and timestamps. But what about large files like images, videos, audio files or PDFs?
+
+These files can be massive in size and databases are simply not designed to store and serve them efficiently.
+
+This is where Blob Storage comes in. Blob stands for Binary Large Object. Blob storage is a specialized storage system built specifically for storing large unstructured files. Instead of putting a video or an image inside your database, you upload it to blob storage and store just the link (URL) to that file in your database. When the application needs to display the file it uses the link to fetch it directly from blob storage.
+
+### Real World Scenario:- 
+
+Our restaurant's kitchen has shelves for everyday items such as spices, sauces, utensils. These shelves are organized and easy to access. But the kitchen also receives bulk supplies — 50 kg sacks of rice, crates of vegetables, large drums of oil. Trying to fit all of that on the kitchen shelves would make everything cluttered and slow to navigate.
+
+So the owner rents a separate warehouse nearby for all the bulk items. The kitchen shelves only keep a note — "Rice: Warehouse, Shelf 3, Row B." When the chef needs rice, they check the note and fetch it from the warehouse. The kitchen stays clean and organized, and the warehouse handles the heavy storage.
+
+That warehouse is blob storage. The note on the kitchen shelf is the URL stored in the database.
+
 
