@@ -585,7 +585,7 @@ CDNs are especially useful for serving static content such as images, videos, CS
 
 ### Real World Scenario:- 
 
-Our restaurant is based in one location, but customers from all across the city are ordering the same popular dishes for takeaway. If every single order has to be prepared and delivered from the original kitchen, customers on the far side of the city wait much longer than those nearby.
+Our restaurant is based in one location, but customers from all across the city are ordering the same popular dishes for takeaway. If every single order has to be prepared and delivered from the original kitchen, customers on the far side of the city will wait much longer than those nearby to the restaurant.
 
 To fix this, the owner sets up small satellite food counters in different parts of the city. Each counter keeps a stock of the most popular dishes, ready to serve. When a customer places an order, it is fulfilled by the nearest counter instead of the main kitchen. The food reaches the customer faster, and the main kitchen is not overwhelmed with every single order.
 
