@@ -637,4 +637,8 @@ Instead, you leave your phone number with the restaurant and say — "Call me wh
 
 Your phone number is the webhook URL. The restaurant calling you is the webhook being triggered.
 
+### Technical Example:- 
 
+An E-commerce website uses Razorpay to process payments. When a customer clicks "Pay Now," the payment is handed off to Razorpay. The e-commerce server does not keep asking Razorpay "Is the payment done? Is the payment done?" every second. Instead, during the setup an e-commerce server registered a webhook URL with Razorpay something like https://mystore.com/api/payment-webhook.
+
+The moment the payment succeeds or fails, Razorpay sends an HTTP POST request to that URL with the payment details such as amount, status, transaction ID. The e-commerce server receives it, updates the order status and sends the customer a confirmation. One notification is exactly what it matters and no polling and no open connection is required.
