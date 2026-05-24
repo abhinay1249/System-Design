@@ -631,7 +631,7 @@ Think of it as, WebSockets are like a live phone call that stays connected. Webh
 
 ### Real World Scenario:-
 
-You place a takeaway order at a restaurant and the food will take 30 minutes to prepare. You don't want to sit around waiting, and you don't want to keep calling the restaurant every 5 minutes asking "Is it ready?"
+You place a takeaway order at a restaurant and the food will take 30 minutes to prepare. You don't want to sit around waiting and you don't want to keep calling the restaurant every 5 minutes asking "Is it ready?"
 
 Instead, you leave your phone number with the restaurant and say — "Call me when my order is ready." The moment the order is packed and ready, the restaurant calls your number and will let you know. You didn't have to check repeatedly. The restaurant will notify you exactly when the event (order ready) happened.
 
@@ -704,7 +704,7 @@ To prevent this, the restaurant introduces a new rule: "Only 2 plates per visit 
 
 If you are building an app that reads data from the Twitter API, Twitter will not let you fetch data as fast as you want. They might enforce a rate limit of "900 requests per 15 minutes."
 
-If your app sends 500 requests in that time frame, everything works perfectly. But if a bug in your code causes your app to send 1,000 requests in a few seconds, the first 900 will succeed, and the remaining 100 will immediately be rejected by Twitter's server. Your app will receive an HTTP 429 "Too Many Requests" error and you will have to wait until the 15-minute window resets before you can ask for more data.
+If your app sends 500 requests in that time frame, everything works perfectly. But if a bug in your code causes your app to send 1,000 requests in a few seconds, the first 900 will succeed and the remaining 100 will immediately be rejected by Twitter's server. Your app will receive an HTTP 429 "Too Many Requests" error and you will have to wait until the 15-minute window resets before you can ask for more data.
 
 
 # 29. API GATEWAY
@@ -725,7 +725,7 @@ Instead, the restaurant has a Host at the front door. The customer only talks to
 
 The Host checks if the customer has a reservation (Authentication).
 The Host makes sure the customer isn't trying to order the entire buffet at once (Rate Limiting).
-The Host takes the full order and routes the starters to the starter station, the mains to the main station, and the dessert to the dessert station (Routing).
+The Host takes the full order and routes the starters to the starter station, the mains to the main station and the dessert to the dessert station (Routing).
 The customer gets a seamless experience and the kitchens don't have to deal with the customers directly. The Host is the API Gateway.
 
 ### Technical Example:-
@@ -747,5 +747,11 @@ You are at a restaurant with a friend. You want a coffee, so you tell the waiter
 
 Now let's add idempotency. When you place your order, the restaurant gives you a unique slip that says "Order #42". You hand "Order #42" to the waiter. A minute later, your friend finds a copy of the slip and hands "Order #42" to the waiter again. The waiter looks at it and says, "I'm already making Order #42." No matter how many times you hand the waiter that exact same slip, you will only ever get one coffee. That is idempotent.
 
-### Techincal Example:-
+### Technical Example:-
+
+Payment gateways like Stripe rely heavily on idempotency. When a user clicks the "Pay Rs.5000" button, the mobile app generates a unique random string called an Idempotency Key (like payment_abc123) and attaches it to the request.
+
+If the user's internet drops and they click the "Pay" button five more times in frustration, the app sends those retries using the exact same Idempotency Key. Stripe's server receives the first request, processes the Rs.5000 payment and saves the result linked to payment_abc123. When the five retries are sent later. Stripe sees the key, realizes it has already handled this transaction and simply replies "Success" five times without ever touching the credit card again. The user is safely charged only once.
+
+
 
