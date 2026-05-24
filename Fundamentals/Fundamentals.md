@@ -606,3 +606,13 @@ This works fine for loading a webpage or fetching search results, but what about
 
 WebSockets solve this by opening a persistent, two-way(Bi-Directional) connection between the client and the server. Once the connection is established both sides can send data to each other at any time without waiting for the other to ask first. The connection stays open for as long as needed and data flows freely in both directions instantly.
 
+### Real World Scenario:- 
+
+
+
+### Technical Example:- 
+
+When you use WhatsApp Web, your browser opens a WebSocket connection to WhatsApp's server. Once that connection is established then it stays open. When someone sends you a message the server pushes it to your browser instantly through the open connection and you don't have to refresh the page or keep asking the server for updates. When you type and send a reply, it travels through the same open connection back to the server immediately.
+
+This is why messages appear in real time. If WhatsApp used regular HTTP then your browser would have to keep asking the server "Any new messages?" every second which would be slow, wasteful and would never feel instant.
+
