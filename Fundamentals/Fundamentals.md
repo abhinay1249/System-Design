@@ -719,7 +719,7 @@ An API Gateway does holds authentication, rate limiting, logging, monitoring and
 
 ### Real World Scenario:-
 
-Remember our restaurant that was split into specialized kitchen stations (starters, mains, desserts)? If a customer walked in and had to figure out which station to go to for each part of their meal, it would be chaotic.
+Remember a restaurant that was split into specialized kitchen stations (starters, mains, desserts)? If a customer walked in and had to figure out which station to go to for each part of their meal, it would be chaotic.
 
 Instead, the restaurant has a Host at the front door. The customer only talks to the Host.
 
@@ -736,4 +736,16 @@ Instead of your TV app sending three separate requests to the Profile Service, H
 
 Common API Gateways include Amazon API Gateway and Kong.
 
+
+# 30. IDEMPOTENCY
+
+Idempotency is a principle in system design which ensures that performing an action multiple times produces the exact same result as performing it only once. In software, network connections can drop or lag, which often causes an application to accidentally send the exact same request to the server multiple times (such as a user clicking a "Submit" button twice). If a system is built to be idempotent, it is smart enough to identify these duplicate requests and safely ignore the extras. This guarantees that the underlying action is only ever processed once preventing critical errors like creating duplicate user accounts or charging a credit card multiple times.
+
+### Real World Sceario:-
+
+You are at a restaurant with a friend. You want a coffee, so you tell the waiter, "Bring us a coffee." The waiter walks away. A minute later, your friend not knowing you had already ordered, sees the waiter and says, "Bring us a coffee." Because the waiter just followed instructions blindly, you end up with two coffees and get charged twice. This is not idempotent.
+
+Now let's add idempotency. When you place your order, the restaurant gives you a unique slip that says "Order #42". You hand "Order #42" to the waiter. A minute later, your friend finds a copy of the slip and hands "Order #42" to the waiter again. The waiter looks at it and says, "I'm already making Order #42." No matter how many times you hand the waiter that exact same slip, you will only ever get one coffee. That is idempotent.
+
+### Techincal Example:-
 
