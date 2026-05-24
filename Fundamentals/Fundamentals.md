@@ -663,3 +663,25 @@ So the owner restructures the kitchen into separate specialized stations such as
 Amazon's application is not one giant codebase. It is split into hundreds of independent microservices such as there is a separate service for user accounts, one for product search, one for order processing, one for payments, one for inventory management, one for shipping and tracking and so on. Each service runs independently and communicates with the others through APIs.
 
 If the recommendation service goes down, you can still search for products and place orders. If there is a traffic spike on the product search service during a sale, Amazon scales only that service by adding more servers to it without touching the payment or shipping services. This independence is what allows Amazon to handle millions of users simultaneously without the entire system being affected by a single point of failure.
+
+
+# 27. MESSAGE QUEUES
+
+With microservices, we broke the application into separate, independent pieces. But these pieces still need to talk to each other. If Service A needs Service B to do something, it could just send an API request and wait for a response. But what if Service B is currently busy, slow or offline? Service A would be stuck waiting and the whole system would slow down. This is called synchronous communication.
+
+A Message Queue is a way for services to communicate asynchronously. It acts as a temporary holding area such as a middleman between services. Instead of Service A talking directly to Service B, Service A drops a "message" (a task or piece of data) into the queue and immediately moves on to its next task. Service B, whenever it is ready, picks up the message from the queue and processes it.
+
+This means the sender doesn't have to wait for the receiver and the receiver doesn't get overwhelmed because it can process messages at its own pace.
+
+### Real World Scenario:- 
+
+In our restaurant, imagine the waiter (Service A) took an order and walked into the kitchen to give it to the chef (Service B). If the waiter had to stand there and wait until the chef finished cooking before taking the next customer's order, the restaurant would grind to a halt.
+
+Instead, the restaurant uses an order ticket rail (the Message Queue). The waiter writes the order on a ticket, clips it to the rail and immediately goes back to serving other tables. The chef looks at the rail, pulls the tickets one by one and cooks them at a steady pace. The waiter doesn't wait for the chef and the chef doesn't get overwhelmed if five waiters drop tickets at the same time. The rail acts as a buffer.
+
+### Technical Example:- 
+
+When you sign up for a new app, the User Registration Service creates your account. It also needs to send you a welcome email. Sending an email takes a few seconds. If the registration service waits for the email to send before confirming your account creation, you will be stuck looking at a loading spinner.
+
+Instead, the Registration Service drops a message saying "Send welcome email to user@example.com" into a Message Queue (like RabbitMQ or Amazon SQS) and immediately tells you, "Account created successfully!". A separate Email Notification Service later pulls that message from the queue and sends the email in the background. The user gets a fast experience and the services remain independent.
+
