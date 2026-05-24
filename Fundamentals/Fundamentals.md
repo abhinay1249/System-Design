@@ -628,3 +628,13 @@ With WebSockets, we saw how a persistent connection allows real-time two-way com
 A Webhook is a way for one system to automatically notify another system when an event occurs. Instead of constantly asking, Did anything happen yet? (which is called polling) you simply give the other system a URL and say, "When this event happens, send the details to this URL." The moment the event occurs, the system sends an HTTP request to that URL with the relevant data. No repeated checking, no open connections just a one-time notification exactly when it matters.
 
 Think of it as, WebSockets are like a live phone call that stays connected. Webhooks are like saying "Don't call me, I'll leave my number call me only when the event has occured."
+
+### Real World Scenario:-
+
+You place a takeaway order at our restaurant and the food will take 30 minutes to prepare. You don't want to sit around waiting, and you don't want to keep calling the restaurant every 5 minutes asking "Is it ready?"
+
+Instead, you leave your phone number with the restaurant and say — "Call me when my order is ready." The moment the order is packed and ready, the restaurant calls your number and will let you know. You didn't have to check repeatedly. The restaurant will notify you exactly when the event (order ready) happened.
+
+Your phone number is the webhook URL. The restaurant calling you is the webhook being triggered.
+
+
