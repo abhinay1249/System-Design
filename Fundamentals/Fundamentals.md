@@ -642,3 +642,12 @@ Your phone number is the webhook URL. The restaurant calling you is the webhook 
 An E-commerce website uses Razorpay to process payments. When a customer clicks "Pay Now," the payment is handed off to Razorpay. The e-commerce server does not keep asking Razorpay "Is the payment done? Is the payment done?" every second. Instead, during the setup an e-commerce server registered a webhook URL with Razorpay something like https://mystore.com/api/payment-webhook.
 
 The moment the payment succeeds or fails, Razorpay sends an HTTP POST request to that URL with the payment details such as amount, status, transaction ID. The e-commerce server receives it, updates the order status and sends the customer a confirmation. One notification is exactly what it matters and no polling and no open connection is required.
+
+
+# 26. MICROSERVICES
+
+When an application is first built, everything is usually packed into a single codebase such as the login logic, the payment logic, the notifications, the search, all running together as one big unit. This is called a Monolithic Architecture.
+
+It works fine when the application is small but as it grows there will be problems appearing. A small bug in the payment code could crash the entire application. Updating one feature means redeploying everything and scaling becomes difficult because you have to scale the entire application even if only one part is under heavy load.
+
+Microservices is an architectural approach where the application is broken down into small, independent services, each responsible for one specific function. Each service runs on its own, has its own database if needed and communicates with other services through APIs. If one service goes down, the rest of the application continues working. Each service can be developed, deployed and scaled independently.
