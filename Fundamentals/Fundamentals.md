@@ -33,7 +33,7 @@ For a client to communicate with a server, it needs the server's IP address to l
 
 ### Real World Scenario:- 
 
-Going back to our restaurant before you can visit it, you need its address. Without the address, you wouldn't know where to go. Every restaurant has a unique address that sets it apart from every other place in the city. In the same way, every server on the internet has an IP address a unique location that tells your request exactly where to be delivered.
+Going back to a restaurant before you can visit it, you need its address. Without the address, you wouldn't know where to go. Every restaurant has a unique address that sets it apart from every other place in the city. In the same way, every server on the internet has an IP address a unique location that tells your request exactly where to be delivered.
 
 ### Technical Example:-
 
@@ -111,7 +111,7 @@ Simply put, latency is a measure of delay. It's the waiting period between takin
 
 ### Real World Scenario:-
 
-Back in our restaurant, you've just placed your order with the waiter. The time it takes for the waiter to physically walk from your table to the kitchen to hand in the order ticket is your latency. If your table is right next to the kitchen, the waiter takes two steps and the delay is minimal (low latency). But if you are seated in the outdoor and the kitchen is all the way in the back of the building, the waiter has to walk much further, taking much longer to deliver the ticket (high latency).
+Back in a restaurant, you've just placed your order with the waiter. The time it takes for the waiter to physically walk from your table to the kitchen to hand in the order ticket is your latency. If your table is right next to the kitchen, the waiter takes two steps and the delay is minimal (low latency). But if you are seated in the outdoor and the kitchen is all the way in the back of the building, the waiter has to walk much further, taking much longer to deliver the ticket (high latency).
 
 Notice that the food takes the exact same amount of time to cook in both cases. The delay isn't in the preparation (processing) the delay is purely in the travel time.
 
@@ -137,7 +137,7 @@ HTTPS: HTTPS is simply HTTP with a secure, encrypted wrapper around it. It encry
 
 ### Real World Scenario:-
 
-In our restaurant, imagine you want to order a secret menu item, but you don't want anyone else at nearby tables to hear what you are ordering. [Sounds Funny Right]
+In a restaurant, imagine you want to order a secret menu item, but you don't want anyone else at nearby tables to hear what you are ordering. [Sounds Funny Right]
 
 If you use HTTP, you just tell your order across the room to the waiter. Everyone sitting around you can hear exactly what you said.
 
@@ -161,7 +161,7 @@ Instead of building complex features from scratch, developers use APIs to plug i
 
 ### Real World Scenario:-
 
-In our restaurant, you (the customer) want food from the kitchen, but you are not allowed to walk into the kitchen, open the fridge and start cooking yourself. The kitchen has its own complex internal operations that you don't need to understand. Instead, you interact with the menu. The menu provides a list of specific dishes you are allowed to order. The waiter takes your order from the menu, delivers it to the kitchen and brings the cooked food back to your table.
+In a restaurant, you (the customer) want food from the kitchen, but you are not allowed to walk into the kitchen, open the fridge and start cooking yourself. The kitchen has its own complex internal operations that you don't need to understand. Instead, you interact with the menu. The menu provides a list of specific dishes you are allowed to order. The waiter takes your order from the menu, delivers it to the kitchen and brings the cooked food back to your table.
 
 In this scenario, the menu is the API documentation (the rules defining what you can ask for) and the waiter is the API itself,the messenger that securely transports your request to the kitchen and brings the response back, without you ever having to step foot inside the kitchen.
 
@@ -187,7 +187,7 @@ The server responds with the data in a lightweight format, typically JSON. Each 
 
 ### Real World Scenario:-
 
-Let us go back to our restaurant. Imagine the restaurant introduces a standardized ordering system that every waiter should follow, a fixed set of actions and a clear way to use them.
+Let us go back to a restaurant. Imagine the restaurant introduces a standardized ordering system that every waiter should follow, a fixed set of actions and a clear way to use them.
 
 --> If you want to see the menu, you say: Show me the menu. 
   → That is a GET request.
@@ -227,7 +227,7 @@ REST APIs work well, but they come with a limitation. They return fixed data str
 
 ### Real World Scenario:-
 
-Back in our restaurant, with the REST approach. You order a "Burger Combo Meal" and the kitchen sends you a burger, fries, a drink, a salad and a dessert. But you only wanted the burger, fries and the drink. You got a lot more than you asked for (over-fetching). Or maybe you ordered the burger but it didn't come with potato chips, so you have to place a second order just for potatochips (under-fetching).
+Back in a restaurant, with the REST approach. You order a "Burger Combo Meal" and the kitchen sends you a burger, fries, a drink, a salad and a dessert. But you only wanted the burger, fries and the drink. You got a lot more than you asked for (over-fetching). Or maybe you ordered the burger but it didn't come with potato chips, so you have to place a second order just for potatochips (under-fetching).
 
 With GraphQL approach, You are handed a blank order slip and you write down exactly what you want, "I want a burger and drink itself". The kitchen reads your custom slip and sends you precisely a burger and drink. No extra salad you didn't ask for. No second trip to the waiter. You got exactly what you requested in a single order.
 
@@ -264,7 +264,7 @@ In system design, the database is one of the most critical components because al
 
 ### Real World Scenario:-
 
-In our restaurant, the kitchen needs to remember things such as what dishes are available, what ingredients are in stock, which tables have placed orders and what each customer ordered. If the kitchen had no record of any of this and relied purely on memory then things would fall apart very quickly. Orders would be forgotten, ingredients would run out without warning and returning customers would have to explain their preferences every single time.
+In a restaurant, the kitchen needs to remember things such as what dishes are available, what ingredients are in stock, which tables have placed orders and what each customer ordered. If the kitchen had no record of any of this and relied purely on memory then things would fall apart very quickly. Orders would be forgotten, ingredients would run out without warning and returning customers would have to explain their preferences every single time.
 
 The database is the restaurant's record system, A register where every order, every reservation and every inventory count is stored so it can be looked up at any time.
 
@@ -323,7 +323,7 @@ Vertical Scaling (also called scaling up). It means making your existing server 
 
 ### Real World Scenario:-
 
-Our restaurant is getting popular and the kitchen is struggling to handle the growing number of orders. One approach is to upgrade the kitchen itself by installing a bigger stove, add a larger oven, get a wider countertop. The same kitchen, the same space but with more powerful equipment so it can handle more orders at once. This works well up to a point, but there is a limit. You can only fit so much equipment into one kitchen before there is physically no more room to upgrade.
+A restaurant is getting popular and the kitchen is struggling to handle the growing number of orders. One approach is to upgrade the kitchen itself by installing a bigger stove, add a larger oven, get a wider countertop. The same kitchen, the same space but with more powerful equipment so it can handle more orders at once. This works well up to a point, but there is a limit. You can only fit so much equipment into one kitchen before there is physically no more room to upgrade.
 
 ### Technical Example:-
 
@@ -346,7 +346,7 @@ Horizontal Scaling (also called scaling out) takes a completely different approa
 
 ### Real World Scenario:-
 
-Our restaurant has upgraded its kitchen as much as physically possible, but orders are still piling up. Instead of trying to squeeze more into the same kitchen, the owner opens a second kitchen branch across town. Now orders are split between two kitchens. If demand grows even more, a third branch is opened. Each branch handles its own share of customers and together they serve far more people than a single location ever could.
+A restaurant has upgraded its kitchen as much as physically possible, but orders are still piling up. Instead of trying to squeeze more into the same kitchen, the owner opens a second kitchen branch across town. Now orders are split between two kitchens. If demand grows even more, a third branch is opened. Each branch handles its own share of customers and together they serve far more people than a single location ever could.
 
 ### Technical Example:-
 
@@ -365,7 +365,7 @@ Load Balancer does route this traffic to multiple servers by using few algorithm
 
 ### Real World Scenario:-
 
-Our restaurant now has multiple order counters to handle the rush. But if there is no one managing the crowd then all customers might line up at the first counter while the other counters remain empty. To fix this the restaurant places a floor manager at the entrance. The floor manager looks at all the counters then sees which one has the shortest queue and directs each incoming customer to the least busy counter. This results every counter stays evenly loaded and customers get served faster. The floor manager is the load balancer.
+A restaurant now has multiple order counters to handle the rush. But if there is no one managing the crowd then all customers might line up at the first counter while the other counters remain empty. To fix this the restaurant places a floor manager at the entrance. The floor manager looks at all the counters then sees which one has the shortest queue and directs each incoming customer to the least busy counter. This results every counter stays evenly loaded and customers get served faster. The floor manager is the load balancer.
 
 ### Technical Example:-
 
@@ -384,7 +384,7 @@ An Index solves this by acting as a shortcut. Think of it like a table of conten
 
 ### Real World Scenario:- 
 
-Imagine our restaurant has a thick recipe binder with hundreds of recipes. The chef needs to find the recipe for "Potato Fry." Without any help, the chef would have to flip through every single page until finding it that could take a long time.
+Imagine a restaurant has a thick recipe binder with hundreds of recipes. The chef needs to find the recipe for "Potato Fry." Without any help, the chef would have to flip through every single page until finding it that could take a long time.
 
 But the receipe book has an index page at the very front an alphabetical list of all dish names with their page numbers. The chef looks up "Potato Fry" sees it is on page 87 and opens directly to that page. The recipes themselves haven't changed the index just made finding the right one much faster.
 
@@ -405,7 +405,7 @@ If the primary database ever goes down one of the replica database can take over
 
 ### Real World Scenario:-
 
-Our restaurant's original branch has a master recipe book where all new recipes are added and existing ones are updated. But every branch also has a copy of that book for their chefs to read from.
+A restaurant's original branch has a master recipe book where all new recipes are added and existing ones are updated. But every branch also has a copy of that book for their chefs to read from.
 
 Whenever a new recipe is created or an existing one is changed, it is written into the master book at the original branch and then copied to all the other branches. The chefs at the other branches never write into their book they only read from them. In this way the original branch is not flooded with calls from every chef asking for recipes and if the master book is ever damaged, the copies at the other branches still have the respective book and will be converted into a master book.
 
@@ -424,7 +424,7 @@ Sharding solves this by splitting the data itself across multiple databases. Ins
 
 ### Real World Scenario:-
 
-Our restaurant has grown massively and now serves hundreds of dishes. One kitchen trying to handle every type of dish such as starters, main course, desserts, beverages is chaotic and slow.
+A restaurant has grown massively and now serves hundreds of dishes. One kitchen trying to handle every type of dish such as starters, main course, desserts, beverages is chaotic and slow.
 
 So the owner decides to split the menu across specialized kitchens. Kitchen A handles only starters. Kitchen B handles only main course items. Kitchen C handles only desserts. Each kitchen stores only the recipes it is responsible for and handles only the orders related to its section. No single kitchen is overloaded with everything and each one works faster because it focuses on a smaller set of items. Each of those specialized kitchens is a Shard.
 
@@ -443,7 +443,7 @@ Instead of keeping all the information about something in one place, vertical pa
 
 ### Real World Scenario:-
 
-In our restaurant, each recipe in the book contains two things, the cooking steps and the full ingredient list with supplier details. The chef uses the cooking steps every single time an order comes in but the ingredient and supplier details are only needed once a week when restocking.
+In a restaurant, each recipe in the book contains two things, the cooking steps and the full ingredient list with supplier details. The chef uses the cooking steps every single time an order comes in but the ingredient and supplier details are only needed once a week when restocking.
 
 So the owner splits the book into two. One book has just the cooking steps which is light, quick to flip through and used constantly. The other book has the ingredient and supplier details that are heavier but only pulled out when needed. The chef's daily work becomes faster because the book on the counter only contains what is needed in the moment.
 
@@ -501,7 +501,7 @@ In short, Normalization prioritizes clean and organized storage. Denormalization
 
 ### Real World Scenario:-
 
-In our restaurant, every recipe uses ingredients from various suppliers. 
+In a restaurant, every recipe uses ingredients from various suppliers. 
 
 The normalized approach is to keep a separate supplier list of each recipe just mentions the ingredient name and if you need supplier details, you look them up in the supplier list. Clean and no repetition but you have to check two places every time.
 
@@ -562,7 +562,7 @@ This is where Blob Storage comes in. Blob stands for Binary Large Object. Blob s
 
 ### Real World Scenario:- 
 
-Our restaurant's kitchen has shelves for everyday items such as spices, sauces, utensils. These shelves are organized and are easy to access. But the kitchen also receives bulk supplies such as 50 kg of rice, boxes of vegetables, large tins of oil. Trying to fit all of that on the kitchen shelves would make everything cluttered and slow to navigate.
+A restaurant's kitchen has shelves for everyday items such as spices, sauces, utensils. These shelves are organized and are easy to access. But the kitchen also receives bulk supplies such as 50 kg of rice, boxes of vegetables, large tins of oil. Trying to fit all of that on the kitchen shelves would make everything cluttered and slow to navigate.
 
 So the owner rents a separate warehouse nearby for all the bulk items. The kitchen shelves only keep a note like "Rice: Warehouse, Shelf 3, Row B." When the chef needs rice, they check the note and fetch it from the warehouse. The kitchen stays clean and organized and the warehouse handles the heavy storage.
 
@@ -585,7 +585,7 @@ CDNs are especially useful for serving static content such as images, videos, CS
 
 ### Real World Scenario:- 
 
-Our restaurant is based in one location, but customers from all across the city are ordering the same popular dishes for takeaway. If every single order has to be prepared and delivered from the original kitchen, customers on the far side of the city will wait much longer than those nearby to the restaurant.
+A restaurant is based in one location, but customers from all across the city are ordering the same popular dishes for takeaway. If every single order has to be prepared and delivered from the original kitchen, customers on the far side of the city will wait much longer than those nearby to the restaurant.
 
 To fix this, the owner sets up small satellite food counters in different parts of the city. Each counter keeps a stock of the most popular dishes that are ready to serve. When a customer places an order, it will be provided by the nearest counter instead of the main kitchen. The food reaches the customer faster and the main kitchen is not overwhelmed with every single order.
 
@@ -608,7 +608,9 @@ WebSockets solve this by opening a persistent, two-way(Bi-Directional) connectio
 
 ### Real World Scenario:- 
 
+In a restaurant, the normal HTTP way works like this, you place your order with the waiter and sit down. After that, if you want to know how your food is coming along, you have to raise your hand, get the waiter's attention and ask every few minutes. The waiter walks to the kitchen, checks, walks back and gives you an update. If you want another update five minutes later, you repeat the whole thing. Every single update requires you to initiate it.
 
+With WebSockets, the restaurant has a live order tracking display on the wall — like the screens you see at modern fast food places. Once your order is placed, your order number appears on the board. As the kitchen progresses, the board updates in real time — "Order #12: Preparing → Cooking → Plating → Ready." You see every change the moment it happens without asking anyone. No flagging the waiter, no walking to the counter. The connection between the kitchen's system and the display stays live the entire time.
 
 ### Technical Example:- 
 
