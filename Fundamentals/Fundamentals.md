@@ -706,3 +706,13 @@ If you are building an app that reads data from the Twitter API, Twitter will no
 
 If your app sends 500 requests in that time frame, everything works perfectly. But if a bug in your code causes your app to send 1,000 requests in a few seconds, the first 900 will succeed, and the remaining 100 will immediately be rejected by Twitter's server. Your app will receive an HTTP 429 "Too Many Requests" error and you will have to wait until the 15-minute window resets before you can ask for more data.
 
+
+# 29. API GATEWAY
+
+When we introduced Microservices, we broke the application into many small and independent services. But this creates a new problem for the client (like a mobile app). If an app needs user details, product info and shipping status, does it have to make three separate requests to three different microservices? Managing all those URLs and requests on the client side is a nightmare.
+
+An API Gateway is the solution. It sits right between the client and the microservices, acting as a single entry point. The client only talks to the API Gateway. The gateway takes the request, figures out which microservice (or services) needs to handle it, routes the request there, gathers the responses and sends a single unified response back to the client.
+
+Because all traffic flows through it, the API Gateway is also the perfect place to enforce rules for everyone like checking if the user is logged in (Authentication) and enforcing how many requests they can make (Rate Limiting).
+
+
