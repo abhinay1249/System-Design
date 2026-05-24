@@ -610,7 +610,9 @@ WebSockets solve this by opening a persistent, two-way(Bi-Directional) connectio
 
 In a restaurant, the normal HTTP way works like this, you place your order with the waiter and sit down. After that, if you want to know how your food is coming along, you have to raise your hand, get the waiter's attention and ask every few minutes. The waiter walks to the kitchen, checks, walks back and gives you an update. If you want another update five minutes later, you repeat the whole thing. Every single update requires you to initiate it.
 
-With WebSockets, the restaurant has a live order tracking display on the wall — like the screens you see at modern fast food places. Once your order is placed, your order number appears on the board. As the kitchen progresses, the board updates in real time — "Order #12: Preparing → Cooking → Plating → Ready." You see every change the moment it happens without asking anyone. No flagging the waiter, no walking to the counter. The connection between the kitchen's system and the display stays live the entire time.
+With WebSockets, the restaurant has a live order tracking display on the wall like the screens you see at food places. Once your order is placed, your order number appears on the board. As the kitchen progresses, the board updates in real time such as 
+"Order #12: Preparing → Cooking → Plating → Ready."
+You see every change the moment it happens without asking anyone. No asking the waiter, no walking to the counter. The connection between the kitchen's system and the display stays live the entire time.
 
 ### Technical Example:- 
 
