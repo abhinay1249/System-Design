@@ -597,3 +597,12 @@ When a user in Mumbai opens Netflix and presses play on a movie, the video does 
 
 Popular CDN providers include Cloudflare, AWS CloudFront and Akamai.
 
+
+# 24. WEB SOCKETS
+
+With HTTP communication follows a strict pattern where the client sends a request, the server sends back a response and the connection is closed. If the client wants new data, it has to send another request. The server can never reach out to the client on its own, it can only respond when asked.
+
+This works fine for loading a webpage or fetching search results, but what about applications that need real-time and instant communication such as chat app, a live score update or a multiplayer game. Having the client constantly ask the server "Any new messages? Any new messages? Any new messages?" every second is not the efficient approach to perform.
+
+WebSockets solve this by opening a persistent, two-way connection between the client and the server. Once the connection is established, both sides can send data to each other at any time without waiting for the other to ask first. The connection stays open for as long as needed, and data flows freely in both directions — instantly.
+
