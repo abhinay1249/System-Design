@@ -620,3 +620,11 @@ When you use WhatsApp Web, your browser opens a WebSocket connection to WhatsApp
 
 This is why messages appear in real time. If WhatsApp used regular HTTP then your browser would have to keep asking the server "Any new messages?" every second which would be slow, wasteful and would never feel instant.
 
+
+# 25. WEB HOOKS
+
+With WebSockets, we saw how a persistent connection allows real-time two-way communication. But not every situation needs a connection that stays open the entire time. Sometimes you just need to be notified when something specific happens and that is exactly what Webhooks do.
+
+A Webhook is a way for one system to automatically notify another system when an event occurs. Instead of constantly asking, Did anything happen yet? (which is called polling) you simply give the other system a URL and say, "When this event happens, send the details to this URL." The moment the event occurs, the system sends an HTTP request to that URL with the relevant data. No repeated checking, no open connections just a one-time notification exactly when it matters.
+
+Think of it as, WebSockets are like a live phone call that stays connected. Webhooks are like saying "Don't call me, I'll leave my number call me only when the event has occured."
