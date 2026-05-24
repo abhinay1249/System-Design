@@ -631,7 +631,7 @@ Think of it as, WebSockets are like a live phone call that stays connected. Webh
 
 ### Real World Scenario:-
 
-You place a takeaway order at our restaurant and the food will take 30 minutes to prepare. You don't want to sit around waiting, and you don't want to keep calling the restaurant every 5 minutes asking "Is it ready?"
+You place a takeaway order at a restaurant and the food will take 30 minutes to prepare. You don't want to sit around waiting, and you don't want to keep calling the restaurant every 5 minutes asking "Is it ready?"
 
 Instead, you leave your phone number with the restaurant and say — "Call me when my order is ready." The moment the order is packed and ready, the restaurant calls your number and will let you know. You didn't have to check repeatedly. The restaurant will notify you exactly when the event (order ready) happened.
 
@@ -654,7 +654,7 @@ Microservices is an architectural approach where the application is broken down 
 
 ### Real World Scenario:-
 
-Imagine our restaurant starts with a single chef who handles everything such as taking orders, preparing starters, cooking the main course, making desserts and packing takeaways. When the restaurant is small, this works fine. But as it grows, this one chef becomes the bottleneck. If the chef is busy making a dessert, the main course orders pile up. If the chef falls sick, the entire restaurant shuts down.
+Imagine a restaurant starts with a single chef who handles everything such as taking orders, preparing starters, cooking the main course, making desserts and packing takeaways. When the restaurant is small, this works fine. But as it grows, this one chef becomes the bottleneck. If the chef is busy making a dessert, the main course orders pile up. If the chef falls sick, the entire restaurant shuts down.
 
 So the owner restructures the kitchen into separate specialized stations such as one station for starters, one for main course, one for desserts and one for takeaway packing. Each station has its own chef and operates independently. If the dessert station is overwhelmed, the owner hires an extra person just for that station without touching the others. If the starters station has an issue, the main course station continues serving without any interruption. Each station is a microservice.
 
@@ -675,7 +675,7 @@ This means the sender doesn't have to wait for the receiver and the receiver doe
 
 ### Real World Scenario:- 
 
-In our restaurant, imagine the waiter (Service A) took an order and walked into the kitchen to give it to the chef (Service B). If the waiter had to stand there and wait until the chef finished cooking before taking the next customer's order, the restaurant would grind to a halt.
+In a restaurant, imagine the waiter (Service A) took an order and walked into the kitchen to give it to the chef (Service B). If the waiter had to stand there and wait until the chef finished cooking before taking the next customer's order, the restaurant would grind to a halt.
 
 Instead, the restaurant uses an order ticket rail (the Message Queue). The waiter writes the order on a ticket, clips it to the rail and immediately goes back to serving other tables. The chef looks at the rail, pulls the tickets one by one and cooks them at a steady pace. The waiter doesn't wait for the chef and the chef doesn't get overwhelmed if five waiters drop tickets at the same time. The rail acts as a buffer.
 
@@ -684,4 +684,23 @@ Instead, the restaurant uses an order ticket rail (the Message Queue). The waite
 When you sign up for a new app, the User Registration Service creates your account. It also needs to send you a welcome email. Sending an email takes a few seconds. If the registration service waits for the email to send before confirming your account creation, you will be stuck looking at a loading spinner.
 
 Instead, the Registration Service drops a message saying "Send welcome email to user@example.com" into a Message Queue (like RabbitMQ or Amazon SQS) and immediately tells you, "Account created successfully!". A separate Email Notification Service later pulls that message from the queue and sends the email in the background. The user gets a fast experience and the services remain independent.
+
+
+### 28. RATE LIMITING
+
+Even with multiple servers, load balancers and message queues, a system can only handle so much traffic at once. What happens if a malicious hacker/bot tries to bring down your application by sending millions of fake requests per second or what if one single user accidentally runs a script that spams your server with thousands of requests, slowing the system down for everyone else?
+
+Rate Limiting is a defensive strategy used to control the amount of incoming traffic. It acts like a traffic cop, restricting how many requests a specific user, IP address or application can make within a given time period. If a user exceeds their allowed limit, the server simply rejects the extra requests and tells the user to wait. This prevents abuse and stops automated attacks (like DDoS) and ensures fair usage for all customers.
+
+### Real World Scenario:-
+
+A restaurant has introduced an "All You Can Eat" buffet. It is very popular. But one day, a customer walks in, skips the line and tries to take an entire tray of chicken wings back to their table, leaving none for the other waiting customers.
+
+To prevent this, the restaurant introduces a new rule: "Only 2 plates per visit to the buffet counter." If a customer tries to take 5 plates at once the staff stops them and says, You have reached your limit for now. Please finish these and come back later. This ensures there is enough food for everyone and stops one greedy customer from ruining the buffet for the rest.
+
+### Technical Example:-
+
+If you are building an app that reads data from the Twitter API, Twitter will not let you fetch data as fast as you want. They might enforce a rate limit of "900 requests per 15 minutes."
+
+If your app sends 500 requests in that time frame, everything works perfectly. But if a bug in your code causes your app to send 1,000 requests in a few seconds, the first 900 will succeed, and the remaining 100 will immediately be rejected by Twitter's server. Your app will receive an HTTP 429 "Too Many Requests" error and you will have to wait until the 15-minute window resets before you can ask for more data.
 
