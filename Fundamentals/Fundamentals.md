@@ -692,6 +692,8 @@ Even with multiple servers, load balancers and message queues, a system can only
 
 Rate Limiting is a defensive strategy used to control the amount of incoming traffic. It acts like a traffic cop, restricting how many requests a specific user, IP address or application can make within a given time period. If a user exceeds their allowed limit, the server simply rejects the extra requests and tells the user to wait. This prevents abuse and stops automated attacks (like DDoS) and ensures fair usage for all customers.
 
+Some of the most frequently used algorithms are, Fixed Window, Sliding Window, Token Bucket etc..
+
 ### Real World Scenario:-
 
 A restaurant has introduced an "All You Can Eat" buffet. It is very popular. But one day, a customer walks in, skips the line and tries to take an entire tray of chicken wings back to their table, leaving none for the other waiting customers.
