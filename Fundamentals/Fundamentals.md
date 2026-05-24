@@ -755,3 +755,8 @@ If the user's internet drops and they click the "Pay" button five more times in 
 
 
 
+System design is a vast and complex field but every massive global architecture is built on top of the same fundamental concepts.
+
+The 30 concepts we have covered here form the absolute baseline for system design. Before you can architect a system it should be capable of handling millions of users, you must deeply understand these fundamentals such as how servers communicate, how data is stored and retrieved, how bottlenecks are resolved and how systems scale without collapsing.
+
+Once you have mastered these core principles, you can dive into advance and in-depth system design.
