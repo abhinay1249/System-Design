@@ -417,6 +417,8 @@ A banking application has millions of customers checking their balances and tran
 
 Instead, the bank uses one primary database for all writes such as every new transaction, every account update goes here. It then maintains two replica databases that are kept in sync with the primary. All read requests such as checking balances, viewing statements are routed to the replicas. This splits the traffic so no single database is overwhelmed, If the primary crashes then one of the replicas is promoted to become the new primary and the system continues without the customer ever noticing.
 
+<img width="888" height="228" alt="image" src="https://github.com/user-attachments/assets/44ea6caa-736e-48e3-8d1a-3f9d1a56cbcf" />
+
 
 # 17. SHARDING
 
