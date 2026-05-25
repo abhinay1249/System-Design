@@ -394,6 +394,8 @@ When you go to Amazon and search for "wireless headphones". Amazon's database ha
 
 Instead, Amazon keeps an index on the product names. When you search the database looks at the index first and quickly finds where "wireless headphones" is located and pulls up the results almost instantly. The index is the reason your search results appear in milliseconds instead of minutes.
 
+<img width="563" height="188" alt="image" src="https://github.com/user-attachments/assets/8403a229-9841-4435-b155-83b16d876b73" />
+
 
 # 16. REPLICATION
 
