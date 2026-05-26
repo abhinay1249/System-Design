@@ -438,6 +438,8 @@ A social media platform like Instagram has over a billion users. Storing all the
 
 Instead, Instagram shards its database by region. Users from India are stored in one database server, users from the US in another and  users from Europe in another. When a user from India logs in the system knows to query the India shard directly such as it never touches the US or Europe shards. This keeps each database smaller, faster and more manageable. As the user base grows in a new region, a new shard is simply added for that region.
 
+<img width="732" height="237" alt="image" src="https://github.com/user-attachments/assets/fbc0b472-5252-40e8-beb9-cf8284d60b25" />
+
 
 # 18. VERTICAL PARTITIONING
 
