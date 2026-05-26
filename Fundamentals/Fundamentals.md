@@ -526,6 +526,8 @@ In a denormalized setup, the customer's name and address are stored directly ins
 Systems that need strict accuracy like banking uses Normalization.
 Systems that need fast reads at massive scale like news feeds or dashboards often uses Denormalization. 
 
+<img width="535" height="369" alt="image" src="https://github.com/user-attachments/assets/aaa287b6-4a9f-4a00-bb81-19d4b806c0f3" />
+
 
 # 21. CAP THEOREM
 
