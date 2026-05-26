@@ -493,6 +493,8 @@ For example Rs.49000 and stores this result temporarily in the cache for faster 
 
 In this challenging scenario there have been few cache consistent strategies to avoid such kind of race condition. One of it is the most common one known as Cache-Aside Pattern. This pattern ensures that once the database update is successful, the cache is either updated with the latest value internally or the existing cached data is invalidated (removed). During the next read operation, the latest data is fetched and stored back into the cache.
 
+<img width="1041" height="532" alt="image" src="https://github.com/user-attachments/assets/1925ac49-5b00-407c-828e-747c4c171486" />
+
 
 # 20. NORMALIZATION - DENORMALIZATION
 
