@@ -500,7 +500,7 @@ In this challenging scenario there have been few cache consistent strategies to 
 
 When storing data in a database, you have to decide how to organize it. There are two approaches.
 
-1) Normalization
+1) Normalization  
 2) Denormalization
 
 Normalization means splitting your data across multiple tables to avoid repetition. Each piece of information is stored only once and tables reference each other when they need related data. This keeps the data clean, consistent and easy to update but when you need to read something, the database may have to look across several tables and join them together which can be slower.
