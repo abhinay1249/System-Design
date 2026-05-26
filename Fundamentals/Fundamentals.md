@@ -459,6 +459,8 @@ An e-commerce website like Flipkart stores product information such as name, pri
 
 With vertical partitioning, the product table is split. One table stores name, price and category which resembles small, fast to query and accessed on every page load. A separate table stores description and images that are larger in size but only queried when a user opens a specific product page. This keeps the frequently accessed table lean and fast.
 
+<img width="434" height="206" alt="image" src="https://github.com/user-attachments/assets/27da7a21-4825-410e-9215-a8f4008a8f14" />
+
 
 # 19. CACHING
 
