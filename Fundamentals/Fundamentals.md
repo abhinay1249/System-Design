@@ -709,6 +709,8 @@ When you sign up for a new app, the User Registration Service creates your accou
 
 Instead, the Registration Service drops a message saying "Send welcome email to user@example.com" into a Message Queue (like RabbitMQ or Amazon SQS) and immediately tells you, "Account created successfully!". A separate Email Notification Service later pulls that message from the queue and sends the email in the background. The user gets a fast experience and the services remain independent.
 
+<img width="500" height="267" alt="image" src="https://github.com/user-attachments/assets/5b71483b-fe7d-4850-bb4d-09b1240676f9" />
+
 
 ### 28. RATE LIMITING
 
