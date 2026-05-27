@@ -663,6 +663,8 @@ An E-commerce website uses Razorpay to process payments. When a customer clicks 
 
 The moment the payment succeeds or fails, Razorpay sends an HTTP POST request to that URL with the payment details such as amount, status, transaction ID. The e-commerce server receives it, updates the order status and sends the customer a confirmation. One notification is exactly what it matters and no polling and no open connection is required.
 
+<img width="798" height="313" alt="image" src="https://github.com/user-attachments/assets/e0ef7de5-a1b8-49d2-b876-2930cfaefe8d" />
+
 
 # 26. MICROSERVICES
 
