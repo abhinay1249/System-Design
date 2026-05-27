@@ -613,6 +613,8 @@ When a user in Mumbai opens Netflix and presses play on a movie, the video does 
 
 Popular CDN providers include Cloudflare, AWS CloudFront and Akamai.
 
+<img width="776" height="361" alt="image" src="https://github.com/user-attachments/assets/294c3388-2ffb-4efd-ba1c-f3e614769f29" />
+
 
 # 24. WEB SOCKETS
 
