@@ -355,6 +355,14 @@ Netflix serves over 200 million users worldwide. It runs its application across 
 <img width="989" height="327" alt="image" src="https://github.com/user-attachments/assets/a9c9f8cb-bc70-4cf5-b79c-686bebdae4ef" />
 
 
+
+System design is a vast and complex field but every massive global architecture is built on top of the same fundamental concepts.
+
+The 30 concepts we have covered here form the absolute baseline for system design. Before you can architect a system it should be capable of handling millions of users, you must deeply understand these fundamentals such as how servers communicate, how data is stored and retrieved, how bottlenecks are resolved and how systems scale without collapsing.
+
+Once you have mastered these core principles, you can dive into advance and in-depth system design.
+
+
 # 14. LOAD BALANCER
 
 With horizontal scaling, we now have multiple servers handling incoming traffic. But there will be a question stating when a request comes in, who decides which server should handle it? If all requests accidentally go to one server while the others sit idle, horizontal scaling becomes pointless.
@@ -784,10 +792,3 @@ Payment gateways like Stripe rely heavily on idempotency. When a user clicks the
 If the user's internet drops and they click the "Pay" button five more times in frustration, the app sends those retries using the exact same Idempotency Key. Stripe's server receives the first request, processes the Rs.5000 payment and saves the result linked to payment_abc123. When the five retries are sent later. Stripe sees the key, realizes it has already handled this transaction and simply replies "Success" five times without ever touching the credit card again. The user is safely charged only once.
 
 <img width="294" height="222" alt="image" src="https://github.com/user-attachments/assets/0ce6e733-5b2e-4d82-a4d4-9dab1ba94770" />
-
-
-System design is a vast and complex field but every massive global architecture is built on top of the same fundamental concepts.
-
-The 30 concepts we have covered here form the absolute baseline for system design. Before you can architect a system it should be capable of handling millions of users, you must deeply understand these fundamentals such as how servers communicate, how data is stored and retrieved, how bottlenecks are resolved and how systems scale without collapsing.
-
-Once you have mastered these core principles, you can dive into advance and in-depth system design.
