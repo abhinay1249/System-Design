@@ -764,6 +764,8 @@ Instead of your TV app sending three separate requests to the Profile Service, H
 
 Common API Gateways include Amazon API Gateway and Kong.
 
+<img width="536" height="286" alt="image" src="https://github.com/user-attachments/assets/48028d73-d432-49c1-bf5c-c6e869e1f8ed" />
+
 
 # 30. IDEMPOTENCY
 
