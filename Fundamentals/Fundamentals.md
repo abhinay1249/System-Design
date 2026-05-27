@@ -588,6 +588,8 @@ When you upload a video to YouTube then that video file could be several gigabyt
 
 Common blob storage services include Amazon S3, Google Cloud Storage and Azure Blob Storage.
 
+<img width="477" height="152" alt="image" src="https://github.com/user-attachments/assets/8cc4a7c8-e71b-4369-87ab-41121f501893" />
+
 
 # 23. CDN
 
