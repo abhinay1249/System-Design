@@ -355,7 +355,6 @@ Netflix serves over 200 million users worldwide. It runs its application across 
 <img width="989" height="327" alt="image" src="https://github.com/user-attachments/assets/a9c9f8cb-bc70-4cf5-b79c-686bebdae4ef" />
 
 
-
 System design is a vast and complex field but every massive global architecture is built on top of the same fundamental concepts.
 
 The 30 concepts we have covered here form the absolute baseline for system design. Before you can architect a system it should be capable of handling millions of users, you must deeply understand these fundamentals such as how servers communicate, how data is stored and retrieved, how bottlenecks are resolved and how systems scale without collapsing.
