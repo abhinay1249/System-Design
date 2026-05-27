@@ -783,6 +783,7 @@ Payment gateways like Stripe rely heavily on idempotency. When a user clicks the
 
 If the user's internet drops and they click the "Pay" button five more times in frustration, the app sends those retries using the exact same Idempotency Key. Stripe's server receives the first request, processes the Rs.5000 payment and saves the result linked to payment_abc123. When the five retries are sent later. Stripe sees the key, realizes it has already handled this transaction and simply replies "Success" five times without ever touching the credit card again. The user is safely charged only once.
 
+<img width="294" height="222" alt="image" src="https://github.com/user-attachments/assets/0ce6e733-5b2e-4d82-a4d4-9dab1ba94770" />
 
 
 System design is a vast and complex field but every massive global architecture is built on top of the same fundamental concepts.
