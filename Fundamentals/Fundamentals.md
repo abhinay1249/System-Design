@@ -686,6 +686,8 @@ Amazon's application is not one giant codebase. It is split into hundreds of ind
 
 If the recommendation service goes down, you can still search for products and place orders. If there is a traffic spike on the product search service during a sale, Amazon scales only that service by adding more servers to it without touching the payment or shipping services. This independence is what allows Amazon to handle millions of users simultaneously without the entire system being affected by a single point of failure.
 
+<img width="739" height="253" alt="image" src="https://github.com/user-attachments/assets/016b9108-5259-4704-afb6-78d1317a40df" />
+
 
 # 27. MESSAGE QUEUES
 
