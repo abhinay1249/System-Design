@@ -719,7 +719,7 @@ Instead, the Registration Service drops a message saying "Send welcome email to 
 <img width="500" height="267" alt="image" src="https://github.com/user-attachments/assets/5b71483b-fe7d-4850-bb4d-09b1240676f9" />
 
 
-### 28. RATE LIMITING
+# 28. RATE LIMITING
 
 Even with multiple servers, load balancers and message queues, a system can only handle so much traffic at once. What happens if a malicious hacker/bot tries to bring down your application by sending millions of fake requests per second or what if one single user accidentally runs a script that spams your server with thousands of requests, slowing the system down for everyone else?
 
