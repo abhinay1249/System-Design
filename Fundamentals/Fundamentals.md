@@ -638,6 +638,8 @@ When you use WhatsApp Web, your browser opens a WebSocket connection to WhatsApp
 
 This is why messages appear in real time. If WhatsApp used regular HTTP then your browser would have to keep asking the server "Any new messages?" every second which would be slow, wasteful and would never feel instant.
 
+<img width="608" height="150" alt="image" src="https://github.com/user-attachments/assets/96221b42-c6f1-44f2-a07c-46bc1ffcb521" />
+
 
 # 25. WEB HOOKS
 
