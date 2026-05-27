@@ -563,6 +563,8 @@ A social media feed like Twitter prioritizes keeping the experience alive. If on
 
 In both cases, Partition Tolerance is always present because network failures are unavoidable in the real world. The real decision is always between Consistency and Availability.
 
+<img width="789" height="349" alt="image" src="https://github.com/user-attachments/assets/03fe8410-d6e8-4562-868a-ed6586369a3f" />
+
 
 # 22. BLOB STORAGE
 
