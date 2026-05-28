@@ -4,7 +4,7 @@
 
 Here we are to understand the core fundamental of System Design.
 
-In our day to day lives, we constantly use websites, applications mostly. In this AI driven world, 99.9% of people across the world will use applications and websites itself which make things simpler.
+In our day to day lives, we constantly use websites, applications mostly. In this AI driven world, 99.9% of people across the world will use AI applications and websites which make things simpler.
 
 For Curios Minds (like me & you) who want to understand how systems run in the backend, how architectures are designed internally, how applications function aand how modern advancements reduce the need for verbose manual code (make people more lazy) from the past in the present.
 
