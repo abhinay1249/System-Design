@@ -8,7 +8,7 @@ In our day to day lives, we constantly use websites, applications mostly. In thi
 
 For Curios Minds (like me & you) who want to understand how systems run in the backend, how architectures are designed internally, how applications function aand how modern advancements reduce the need for verbose manual code (make people more lazy) from the past in the present.
 
-Here goes the core fundamentals Of System Design that follows below:- 
+Here goes the Core Fundamentals of System Design that follows below:-
 
 # 1. CLIENT - SERVER ARCHITECTURE
 
